@@ -1,93 +1,121 @@
-/* Minimal academic style (Mandelkern-ish) */
+/* Minimal academic style (crisp + airy) */
+
+/* Global “theme” variables: change these once and the whole site updates. */
 :root{
-  --fg: #111;
-  --muted: #666;
-  --link: #0b57d0;
-  --bg: #fff;
-  --max: 800px;
+  --fg: #111;        /* main text color */
+  --muted: #666;     /* secondary text color */
+  --link: #0b57d0;   /* link color */
+  --bg: #f6f6f6;     /* very light gray background (was #fff) */
+  --max: 740px;      /* max text column width (narrower feels airier) */
 }
 
+/* Apply background to the whole page */
 html, body { background: var(--bg); }
+
+/* Global typography defaults */
 body{
-  margin: 0;
+  margin: 0;                                 /* remove browser default margins */
   color: var(--fg);
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  line-height: 1.55;
+  font-family: "Times New Roman", Times, serif; /* your font */
+  font-size: 15px;                           /* smaller base font (was 16px) */
+  line-height: 1.68;                         /* airier line spacing */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
+/* Main centered column */
 .page{
-  max-width: var(--max);
-  padding: 40px 18px 64px;
-  margin: 0 auto;
+  max-width: var(--max);         /* uses --max above */
+  padding: 56px 20px 84px;       /* more whitespace around content */
+  margin: 0 auto;                /* center the column */
 }
 
-.top{ margin-bottom: 38px; }
+/* Space under the header block (name/intro/nav) */
+.top{ margin-bottom: 44px; }
 
+/* Big title */
 h1{
   font-size: 28px;
   font-weight: 600;
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
 }
 
-.lede{ margin: 0 0 10px 0; }
-.contact{ margin: 0 0 18px 0; }
+/* Intro lines */
+.lede{ margin: 0 0 10px 0; text-align: left; }     /* keep left-aligned */
+.contact{ margin: 0 0 20px 0; text-align: left; }  /* keep left-aligned */
 
+/* Top navigation layout */
 .nav{
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 14px;
+  gap: 10px 14px;     /* vertical, horizontal spacing between nav links */
   margin: 0 0 4px 0;
 }
+
+/* Nav link styling */
 .nav a{
   text-decoration: none;
   color: var(--link);
-  /* Change this if you want capitalized nav labels: none / uppercase / lowercase */
-  text-transform: lowercase;
-  letter-spacing: 0.02em;
+  text-transform: lowercase;  /* keep your “about / research …” style */
+  letter-spacing: 0.005em;    /* LESS letter spacing (was 0.02em) */
 }
 .nav a:hover{ text-decoration: underline; }
 
-section{ margin: 34px 0 0 0; }
+/* BIGGER spacing between sections */
+section{ margin: 56px 0 0 0; }  /* was 34px */
 
+/* Section headings */
 h2{
   font-size: 15px;
   font-weight: 700;
-  margin: 0 0 6px 0;
+  margin: 0 0 10px 0;
   text-transform: none;
+  letter-spacing: 0;           /* ensure no extra tracking */
 }
 h3{
   font-size: 14px;
   font-weight: 700;
-  margin: 14px 0 6px 0;
+  margin: 18px 0 8px 0;
   text-transform: none;
+  letter-spacing: 0;
 }
 
-p{ margin: 0 0 10px 0; }
+/* Paragraph spacing + “blocky” justification */
+p{
+  margin: 0 0 14px 0;          /* more space between paragraphs */
+}
 
+/* Square-justified blocks (requested)
+   Applies only inside sections so your header/nav stays normal. */
+section p, section li{
+  text-align: justify;
+  text-justify: inter-word;    /* helps justification in some browsers */
+  hyphens: auto;               /* reduces ugly gaps (“rivers”) */
+}
+
+/* Lists */
 ul{
-  margin: 0 0 10px 20px;
+  margin: 0 0 14px 20px;       /* bottom margin + indent */
   padding: 0;
 }
-li{ margin: 0 0 8px 0; }
+li{ margin: 0 0 10px 0; }
 
+/* Links */
 a{ color: var(--link); }
 a:visited{ color: var(--link); }
 
-.note{
-  color: var(--muted);
-  margin-top: 4px;
-}
-
+/* Muted text */
+.note{ color: var(--muted); margin-top: 4px; }
 .muted{ color: var(--muted); }
 
+/* Footer */
 .footer{
-  margin-top: 32px;
-  padding-top: 16px;
-  border-top: 1px solid #eee;
+  margin-top: 44px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e5e5; /* adjusted for light-gray background */
 }
+
+/* Monospace for code snippets */
 code{
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 0.92em;

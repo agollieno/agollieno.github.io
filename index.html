@@ -133,5 +133,23 @@
   <script>
     document.getElementById('updated').textContent = new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
   </script>
+  <script>
+  document.getElementById('updated').textContent =
+    new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
+
+  // Fade-in sections on scroll
+  const sections = document.querySelectorAll('main.page section');
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('reveal');
+        obs.unobserve(entry.target); // reveal once, then stop watching
+      }
+    });
+  }, { threshold: 0.12 });
+
+  sections.forEach(sec => observer.observe(sec));
+</script>
 </body>
 </html>

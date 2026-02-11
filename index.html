@@ -81,7 +81,7 @@
     </section> -->
 
 <section id="cv">
-  <h2>You can learn more about my by reading my:</h2>
+  <h2>You can learn more about me by reading my:</h2>
   <p><a href="cv.pdf">CV (PDF)</a></p>
 </section>
 
@@ -130,23 +130,40 @@
     </footer>
   </main>
 
- <script>
-  // Turn on the “JS is running” mode for CSS
+<script>
+  // Enable the CSS rules that start hidden
   document.documentElement.classList.add('js');
 
-  // Fade-in sections on scroll
-  const sections = document.querySelectorAll('main.page section');
+  window.addEventListener('load', () => {
+    const sections = Array.from(document.querySelectorAll('main.page section'));
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
-        obs.unobserve(entry.target); // reveal once
+    // 1) Fade in whatever is already in view on load (instead of appearing instantly)
+    const inView = sections.filter(sec => {
+      const r = sec.getBoundingClientRect();
+      return r.top < window.innerHeight * 0.92; // treat “near viewport” as in view
+    });
+
+    inView.forEach((sec, i) => {
+      setTimeout(() => sec.classList.add('reveal'), 120 + i * 90); // slight stagger
+    });
+
+    // 2) Reveal the rest only when the user scrolls them well into view
+    const observer = new IntersectionObserver((entries, obs) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          obs.unobserve(entry.target);
+        }
       }
-    }
-  }, { threshold: 0.12 });
+    }, {
+      threshold: 0.35,                // needs more of the section visible
+      rootMargin: "0px 0px -25% 0px"  // triggers later (25% from bottom)
+    });
 
-  sections.forEach(sec => observer.observe(sec));
+    sections.forEach(sec => {
+      if (!sec.classList.contains('reveal')) observer.observe(sec);
+    });
+  });
 </script>
 </body>
 </html>

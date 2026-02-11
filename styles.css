@@ -56,13 +56,13 @@ h2{
   font-size: 15px;
   font-weight: 700;
   margin: 0 0 6px 0;
-  text-transform: lowercase;
+  text-transform: none;
 }
 h3{
   font-size: 14px;
   font-weight: 700;
   margin: 14px 0 6px 0;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 p{ margin: 0 0 10px 0; }

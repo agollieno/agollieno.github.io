@@ -121,22 +121,28 @@ code{
   font-size: 0.92em;
 }
 
-/* Fade-in on scroll */
-section{
+/* Fade-in on scroll (only when JS is enabled) */
+.js section{
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 600ms ease, transform 600ms ease;
 }
 
 /* When section is “revealed” */
-section.reveal{
+.js section.reveal{
+  opacity: 1;
+  transform: none;
+}
+
+/* Make the first section visible immediately */
+.js main.page section:first-of-type{
   opacity: 1;
   transform: none;
 }
 
 /* Respect users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce){
-  section{
+  .js section{
     opacity: 1;
     transform: none;
     transition: none;

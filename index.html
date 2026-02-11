@@ -130,23 +130,20 @@
     </footer>
   </main>
 
-  <script>
-    document.getElementById('updated').textContent = new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
-  </script>
-  <script>
-  document.getElementById('updated').textContent =
-    new Date().toLocaleDateString(undefined, {year:'numeric', month:'long', day:'numeric'});
+ <script>
+  // Turn on the “JS is running” mode for CSS
+  document.documentElement.classList.add('js');
 
   // Fade-in sections on scroll
   const sections = document.querySelectorAll('main.page section');
 
   const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting){
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
         entry.target.classList.add('reveal');
-        obs.unobserve(entry.target); // reveal once, then stop watching
+        obs.unobserve(entry.target); // reveal once
       }
-    });
+    }
   }, { threshold: 0.12 });
 
   sections.forEach(sec => observer.observe(sec));

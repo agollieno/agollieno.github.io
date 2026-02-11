@@ -62,7 +62,7 @@ h1{
 .nav a:hover{ text-decoration: underline; }
 
 /* BIGGER spacing between sections */
-section{ margin: 65px 0 0 0; }  /* was 34px */
+section{ margin: 95px 0 0 0; }  /* was 34px */
 
 /* Section headings */
 h2{

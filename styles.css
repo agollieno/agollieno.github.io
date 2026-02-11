@@ -124,18 +124,13 @@ code{
 /* Fade-in on scroll (only when JS is enabled) */
 .js section{
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  transform: translateY(18px); /* bigger movement */
+  transition: opacity 1100ms ease, transform 1100ms ease; /* slower */
+  will-change: opacity, transform;
 }
 
 /* When section is “revealed” */
 .js section.reveal{
-  opacity: 1;
-  transform: none;
-}
-
-/* Make the first section visible immediately */
-.js main.page section:first-of-type{
   opacity: 1;
   transform: none;
 }
@@ -148,3 +143,4 @@ code{
     transition: none;
   }
 }
+

@@ -4,16 +4,16 @@
   --muted: #666;
   --link: #0b57d0;
   --bg: #fff;
-  --max: 780px;
+  --max: 800px;
 }
 
 html, body { background: var(--bg); }
 body{
   margin: 0;
   color: var(--fg);
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  font-size: 17px;
-  line-height: 1.65;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -24,7 +24,7 @@ body{
   margin: 0 auto;
 }
 
-.top{ margin-bottom: 28px; }
+.top{ margin-bottom: 38px; }
 
 h1{
   font-size: 28px;
@@ -50,7 +50,7 @@ h1{
 }
 .nav a:hover{ text-decoration: underline; }
 
-section{ margin: 22px 0 0 0; }
+section{ margin: 34px 0 0 0; }
 
 h2{
   font-size: 15px;

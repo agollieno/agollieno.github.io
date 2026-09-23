@@ -14,7 +14,7 @@
 
   <!--
     If JavaScript is available, the site becomes interactive.
-    Without JavaScript, all sections remain normally visible.
+    Without JavaScript, all sections remain visible normally.
   -->
   <script>
     document.documentElement.classList.add('js');
@@ -35,55 +35,32 @@
 
     <header class="top">
 
-      <div class="hero">
+      <h1>Eno Agolli</h1>
 
-        <div class="hero-text">
+      <p class="lede">
+        <span>Assistant Director, Saul Kripke Center</span>
+        <span>Postdoctoral Research Associate, CUNY Graduate Center</span>
+      </p>
 
-          <h1>Eno Agolli</h1>
-
-          <p class="lede">
-            <span>Assistant Director, Saul Kripke Center</span>
-            <span>Postdoctoral Research Associate, CUNY Graduate Center</span>
-          </p>
-
-          <p class="contact">
-            agollieno
-            <span class="muted">[at]</span>
-            gmail
-            <span class="muted">[dot]</span>
-            com
-          </p>
-
-        </div>
-
-
-        <!--
-          Keep eno.jpg in the same GitHub folder as index.html.
-        -->
-
-        <img
-          class="portrait"
-          src="eno.jpg"
-          alt="Portrait of Eno Agolli"
-        />
-
-      </div>
+      <p class="contact">
+        agollieno
+        <span class="muted">[at]</span>
+        gmail
+        <span class="muted">[dot]</span>
+        com
+      </p>
 
     </header>
 
 
     <!-- =========================================================
-         CONTENT STAGE
+         CONTENT
 
-         All sections live here.
+         With JavaScript, sections stay hidden until requested.
 
-         With JavaScript:
-         - they begin hidden
-         - requested sections are moved to the end of this container
-         - so they appear in the order the visitor discovers them
-
-         Without JavaScript:
-         - everything simply appears as a normal webpage
+         Requested sections are moved to the bottom of this
+         container, so they appear in the order in which the
+         visitor discovers them.
     ========================================================== -->
 
     <div id="content-stage" class="content-stage">
@@ -112,6 +89,32 @@
         <p>
           I was born in Albania, raised in Greece, and I now live in New York City.
         </p>
+
+      </section>
+
+
+      <!-- =======================================================
+           PICTURE
+      ======================================================== -->
+
+      <section
+        id="picture"
+        class="site-section picture-section"
+        data-section="picture"
+      >
+
+        <h2>Picture of me</h2>
+
+        <!--
+          Keep eno.jpg in the same GitHub folder
+          as index.html and styles.css.
+        -->
+
+        <img
+          class="discovered-portrait"
+          src="eno.jpg"
+          alt="Portrait of Eno Agolli"
+        />
 
       </section>
 
@@ -305,11 +308,7 @@
 
 
     <!-- =========================================================
-         INTERACTIVE COMMAND AREA
-
-         Because this comes AFTER content-stage, every newly
-         revealed section appears above it. The prompt therefore
-         naturally moves downward as the visitor discovers the site.
+         INTERACTIVE PROMPT
     ========================================================== -->
 
     <div class="discovery" id="discovery">
@@ -323,7 +322,7 @@
 
 
       <p class="discovery-question">
-        What would you like to know?
+        Type below what you'd like to know.
       </p>
 
 
@@ -350,12 +349,13 @@
             ›
           </span>
 
+
           <input
             id="command-input"
             class="command-input"
             type="text"
             name="command"
-            placeholder="research"
+            placeholder="about"
             autocomplete="off"
             autocapitalize="none"
             spellcheck="false"
@@ -366,49 +366,12 @@
       </form>
 
 
-      <!--
-        These work like commands.
-        They are especially useful on phones.
-      -->
-
-      <div
-        class="command-suggestions"
-        aria-label="Suggested commands"
-      >
-
-        <button type="button" data-command="about">
-          about
-        </button>
-
-        <button type="button" data-command="research">
-          research
-        </button>
-
-        <button type="button" data-command="salon">
-          salon
-        </button>
-
-        <button type="button" data-command="misc">
-          misc
-        </button>
-
-        <button type="button" data-command="students">
-          students
-        </button>
-
-        <button type="button" data-command="help">
-          help
-        </button>
-
-      </div>
-
-
       <button
         type="button"
         class="show-all-button"
         data-command="all"
       >
-        show all
+        Can’t type — just show me everything
       </button>
 
     </div>
@@ -430,7 +393,7 @@
 
 
   <!-- =========================================================
-       INTERACTION LOGIC
+       INTERACTION
   ========================================================== -->
 
   <script>
@@ -439,7 +402,7 @@
 
 
       /* ---------------------------------------------------------
-         BASIC ELEMENTS
+         ELEMENTS
       --------------------------------------------------------- */
 
       const stage =
@@ -462,12 +425,13 @@
 
 
       /*
-        Remember the original order so "all" and "clear"
-        can restore it.
+        The normal order used by "show everything"
+        and by "clear".
       */
 
       const canonicalOrder = [
         'about',
+        'picture',
         'research',
         'salon',
         'misc',
@@ -475,26 +439,16 @@
       ];
 
 
-      /*
-        Is a section already visible?
-      */
-
-      function isVisible(section) {
-        return section.classList.contains('is-visible');
-      }
-
-
 
       /* ---------------------------------------------------------
          COMMAND ALIASES
-
-         The interface is intentionally forgiving.
       --------------------------------------------------------- */
 
       const aliases = {
 
         about: [
           'about',
+          'about me',
           'me',
           'bio',
           'biography',
@@ -503,6 +457,22 @@
           'who are you',
           'who is eno',
           'eno'
+        ],
+
+        picture: [
+          'picture',
+          'picture of me',
+          'photo',
+          'photo of me',
+          'photograph',
+          'photograph of me',
+          'portrait',
+          'portrait of me',
+          'what do you look like',
+          'what does eno look like',
+          'show me your picture',
+          'show me a picture',
+          'show me your photo'
         ],
 
         research: [
@@ -516,7 +486,8 @@
           'projects',
           'scholarship',
           'what do you work on',
-          'what are you working on'
+          'what are you working on',
+          'your research'
         ],
 
         salon: [
@@ -544,15 +515,16 @@
         ],
 
         students: [
+          'for students',
           'students',
           'student',
-          'for students',
           'advice',
           'mentoring',
           'mentor',
           'mentorship',
           'graduate school',
-          'grad school'
+          'grad school',
+          'student advice'
         ],
 
         help: [
@@ -562,7 +534,8 @@
           'menu',
           '?',
           'what can i type',
-          'what can i ask'
+          'what can i ask',
+          'options'
         ],
 
         all: [
@@ -594,7 +567,8 @@
           'contact',
           'email',
           'email me',
-          'contact me'
+          'contact me',
+          'how can i contact you'
         ]
 
       };
@@ -602,90 +576,16 @@
 
 
       /* ---------------------------------------------------------
-         NORMALIZE TYPED INPUT
-      --------------------------------------------------------- */
-
-      function normalizeCommand(value) {
-
-        return value
-          .toLowerCase()
-          .trim()
-          .replace(/[.!,:;]+$/g, '')
-          .replace(/\s+/g, ' ');
-
-      }
-
-
-
-      /* ---------------------------------------------------------
-         WORK OUT WHICH COMMAND THE USER MEANS
-      --------------------------------------------------------- */
-
-      function resolveCommand(value) {
-
-        const normalized =
-          normalizeCommand(value);
-
-
-        for (const [command, variants] of Object.entries(aliases)) {
-
-          if (variants.includes(normalized)) {
-            return command;
-          }
-
-        }
-
-
-        /*
-          A little extra forgiveness for phrases such as:
-          "show me your research"
-          "tell me about the salon"
-        */
-
-        if (normalized.includes('research') ||
-            normalized.includes('paper') ||
-            normalized.includes('semantics')) {
-          return 'research';
-        }
-
-        if (normalized.includes('salon')) {
-          return 'salon';
-        }
-
-        if (normalized.includes('student') ||
-            normalized.includes('mentor')) {
-          return 'students';
-        }
-
-        if (normalized.includes('poetry') ||
-            normalized.includes('poet') ||
-            normalized.includes('language')) {
-          return 'misc';
-        }
-
-        if (normalized.includes('about you') ||
-            normalized.includes('background')) {
-          return 'about';
-        }
-
-
-        return null;
-
-      }
-
-
-
-      /* ---------------------------------------------------------
-         SHORT RESPONSES
-
-         These appear briefly before a requested section
-         is revealed.
+         RESPONSES
       --------------------------------------------------------- */
 
       const summonResponses = {
 
         about:
           'A little context.',
+
+        picture:
+          'Since you asked.',
 
         research:
           'Research, then.',
@@ -704,8 +604,19 @@
 
 
       /* ---------------------------------------------------------
-         FIND A SECTION
+         HELPERS
       --------------------------------------------------------- */
+
+      function normalizeCommand(value) {
+
+        return value
+          .toLowerCase()
+          .trim()
+          .replace(/[.!,:;]+$/g, '')
+          .replace(/\s+/g, ' ');
+
+      }
+
 
       function getSection(name) {
 
@@ -716,9 +627,106 @@
       }
 
 
+      function isVisible(section) {
+
+        return section.classList.contains('is-visible');
+
+      }
+
+
+      function escapeHTML(text) {
+
+        const div =
+          document.createElement('div');
+
+        div.textContent = text;
+
+        return div.innerHTML;
+
+      }
+
+
 
       /* ---------------------------------------------------------
-         SHOW RESPONSE TEXT
+         DETERMINE WHAT THE VISITOR MEANT
+      --------------------------------------------------------- */
+
+      function resolveCommand(value) {
+
+        const normalized =
+          normalizeCommand(value);
+
+
+        for (const [command, variants] of Object.entries(aliases)) {
+
+          if (variants.includes(normalized)) {
+            return command;
+          }
+
+        }
+
+
+        /*
+          Additional forgiveness for natural phrases.
+        */
+
+        if (
+          normalized.includes('picture') ||
+          normalized.includes('photo') ||
+          normalized.includes('portrait') ||
+          normalized.includes('look like')
+        ) {
+          return 'picture';
+        }
+
+
+        if (
+          normalized.includes('research') ||
+          normalized.includes('paper') ||
+          normalized.includes('semantics')
+        ) {
+          return 'research';
+        }
+
+
+        if (normalized.includes('salon')) {
+          return 'salon';
+        }
+
+
+        if (
+          normalized.includes('student') ||
+          normalized.includes('mentor')
+        ) {
+          return 'students';
+        }
+
+
+        if (
+          normalized.includes('poetry') ||
+          normalized.includes('poet') ||
+          normalized.includes('hobbies')
+        ) {
+          return 'misc';
+        }
+
+
+        if (
+          normalized.includes('about you') ||
+          normalized.includes('background')
+        ) {
+          return 'about';
+        }
+
+
+        return null;
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         RESPONSE TEXT
       --------------------------------------------------------- */
 
       function setResponse(text, html = false) {
@@ -734,7 +742,7 @@
 
 
         /*
-          Restart the small entrance animation.
+          Restart the entrance animation.
         */
 
         void response.offsetWidth;
@@ -766,14 +774,25 @@
 
 
         /*
-          If it has already been opened, simply return to it.
+          If already visible, return to it.
         */
 
         if (isVisible(section)) {
 
-          setResponse(
-            `You've already opened ${section.querySelector('h2').textContent.toLowerCase()}.`
-          );
+          if (name === 'picture') {
+
+            setResponse(
+              'You’ve already found me.'
+            );
+
+          } else {
+
+            setResponse(
+              `You've already opened ${section.querySelector('h2').textContent.toLowerCase()}.`
+            );
+
+          }
+
 
           section.scrollIntoView({
             behavior: 'smooth',
@@ -785,27 +804,25 @@
 
 
         /*
-          Brief conversational acknowledgement.
+          A brief reply before the section appears.
         */
 
         if (conversational) {
-          setResponse(summonResponses[name]);
+
+          setResponse(
+            summonResponses[name]
+          );
+
         }
 
 
         /*
-          Move the section to the end of the stage.
-          This makes visible sections appear in the order
-          the visitor requested them.
+          Move the section to the end of the content stage.
+          This means sections appear in the order requested.
         */
 
         stage.appendChild(section);
 
-
-        /*
-          A short delay makes the acknowledgement perceptible
-          before the requested material appears.
-        */
 
         setTimeout(() => {
 
@@ -824,7 +841,8 @@
 
 
           /*
-            On typed mobile commands, close the keyboard.
+            Particularly useful on phones:
+            dismiss the keyboard after submission.
           */
 
           commandInput.blur();
@@ -856,12 +874,12 @@
       function showAll() {
 
         setResponse(
-          'All right. Everything at once.'
+          'Fair enough. Everything at once.'
         );
 
 
         /*
-          Restore the normal editorial order.
+          Restore the normal editorial order first.
         */
 
         canonicalOrder.forEach(name => {
@@ -890,7 +908,7 @@
 
               section.classList.add('is-visible');
 
-            }, index * 90);
+            }, index * 80);
 
           });
 
@@ -909,7 +927,7 @@
 
 
       /* ---------------------------------------------------------
-         CLEAR EVERYTHING
+         CLEAR
       --------------------------------------------------------- */
 
       function clearAll() {
@@ -920,13 +938,11 @@
 
 
         sections.forEach(section => {
+
           section.classList.remove('is-visible');
+
         });
 
-
-        /*
-          Put the hidden sections back in canonical order.
-        */
 
         canonicalOrder.forEach(name => {
 
@@ -948,7 +964,9 @@
 
 
         setTimeout(() => {
+
           commandInput.focus();
+
         }, 100);
 
       }
@@ -963,13 +981,20 @@
 
         setResponse(
           `
-          <span class="help-intro">You can ask for:</span>
-          <span class="help-commands">
-            about · research · salon · misc · students
+          <span class="help-intro">
+            You can ask for:
           </span>
+
+          <span class="help-commands">
+            about · research · salon · misc · for students · picture of me
+          </span>
+
           <span class="help-extra">
-            Or try <strong>all</strong>, <strong>clear</strong>,
-            <strong>cv</strong>, or <strong>contact</strong>.
+            You can also try
+            <strong>all</strong>,
+            <strong>clear</strong>,
+            <strong>cv</strong>,
+            or <strong>contact</strong>.
           </span>
           `,
           true
@@ -1027,7 +1052,9 @@
         setResponse(
           `
           I don't quite know what to do with
-          <span class="unknown-command">“${escapeHTML(cleaned)}”</span>.
+          <span class="unknown-command">
+            “${escapeHTML(cleaned)}”
+          </span>.
           Try <strong>help</strong>.
           `,
           true
@@ -1037,26 +1064,8 @@
 
 
 
-      /*
-        Prevent typed text from becoming executable HTML
-        in the unknown-command response.
-      */
-
-      function escapeHTML(text) {
-
-        const div =
-          document.createElement('div');
-
-        div.textContent = text;
-
-        return div.innerHTML;
-
-      }
-
-
-
       /* ---------------------------------------------------------
-         RUN A COMMAND
+         RUN COMMAND
       --------------------------------------------------------- */
 
       function runCommand(rawCommand) {
@@ -1074,6 +1083,7 @@
         switch (command) {
 
           case 'about':
+          case 'picture':
           case 'research':
           case 'salon':
           case 'misc':
@@ -1124,7 +1134,7 @@
 
 
       /* ---------------------------------------------------------
-         TYPING
+         FORM SUBMISSION
       --------------------------------------------------------- */
 
       commandForm.addEventListener('submit', event => {
@@ -1138,7 +1148,7 @@
 
 
       /* ---------------------------------------------------------
-         TAPPABLE COMMANDS
+         CLICKABLE "SHOW EVERYTHING"
       --------------------------------------------------------- */
 
       commandButtons.forEach(button => {
@@ -1154,15 +1164,16 @@
 
 
       /* ---------------------------------------------------------
-         ROTATING PLACEHOLDER SUGGESTIONS
+         ROTATING GHOST SUGGESTIONS
       --------------------------------------------------------- */
 
       const placeholderIdeas = [
+        'about',
         'research',
         'analytic salon',
-        'about',
+        'picture of me',
         'poetry',
-        'students',
+        'for students',
         'help'
       ];
 
@@ -1173,7 +1184,8 @@
       setInterval(() => {
 
         /*
-          Do nothing while the visitor is typing.
+          Don't change the ghost text while someone
+          is actively typing.
         */
 
         if (
@@ -1196,14 +1208,14 @@
 
 
       /* ---------------------------------------------------------
-         DIRECT LINKS
+         DIRECT URLS
 
-         Visiting:
-           website.com/#research
-           website.com/#salon
-           website.com/#for-students
+         Examples:
 
-         opens that material automatically.
+         /#research
+         /#picture
+         /#salon
+         /#for-students
       --------------------------------------------------------- */
 
       function openFromHash() {
@@ -1216,12 +1228,28 @@
 
 
         const hashMap = {
-          'about': 'about',
-          'research': 'research',
-          'salon': 'salon',
-          'misc': 'misc',
-          'for-students': 'students',
-          'students': 'students'
+
+          'about':
+            'about',
+
+          'picture':
+            'picture',
+
+          'research':
+            'research',
+
+          'salon':
+            'salon',
+
+          'misc':
+            'misc',
+
+          'for-students':
+            'students',
+
+          'students':
+            'students'
+
         };
 
 
@@ -1267,7 +1295,7 @@
 
 
       /* ---------------------------------------------------------
-         BROWSER BACK / FORWARD HASH CHANGES
+         HASH CHANGES
       --------------------------------------------------------- */
 
       window.addEventListener('hashchange', () => {
@@ -1277,12 +1305,28 @@
 
 
         const hashMap = {
-          'about': 'about',
-          'research': 'research',
-          'salon': 'salon',
-          'misc': 'misc',
-          'for-students': 'students',
-          'students': 'students'
+
+          'about':
+            'about',
+
+          'picture':
+            'picture',
+
+          'research':
+            'research',
+
+          'salon':
+            'salon',
+
+          'misc':
+            'misc',
+
+          'for-students':
+            'students',
+
+          'students':
+            'students'
+
         };
 
 

@@ -13,8 +13,8 @@
   />
 
   <!--
-    Add this class immediately, before the page renders.
-    If JavaScript is unavailable, the sections remain visible normally.
+    If JavaScript is available, the site becomes interactive.
+    Without JavaScript, all sections remain normally visible.
   -->
   <script>
     document.documentElement.classList.add('js');
@@ -27,6 +27,7 @@
 <body>
 
   <main class="page">
+
 
     <!-- =========================================================
          HEADER
@@ -53,15 +54,12 @@
             com
           </p>
 
-          <nav class="nav" aria-label="Main navigation">
-            <a href="#about">about</a>
-            <a href="#research">research</a>
-            <a href="#salon">analytic salon</a>
-            <a href="#misc">misc</a>
-            <a href="#for-students">for students</a>
-          </nav>
-
         </div>
+
+
+        <!--
+          Keep eno.jpg in the same GitHub folder as index.html.
+        -->
 
         <img
           class="portrait"
@@ -75,252 +73,345 @@
 
 
     <!-- =========================================================
-         ABOUT
+         CONTENT STAGE
+
+         All sections live here.
+
+         With JavaScript:
+         - they begin hidden
+         - requested sections are moved to the end of this container
+         - so they appear in the order the visitor discovers them
+
+         Without JavaScript:
+         - everything simply appears as a normal webpage
     ========================================================== -->
 
-    <section id="about">
-
-      <h2>About</h2>
-
-      <p>
-        I have a PhD in Philosophy from Rutgers University. I have done
-        coursework and research in philosophy at UChicago, Cambridge (UK),
-        UConn, and Notre Dame. I am an analytic philosopher, specializing in
-        language and logic but also highly interested in metaphysics,
-        epistemology, and occasionally even beyond.
-      </p>
-
-      <p>
-        I was born in Albania, raised in Greece, and I now live in New York City.
-      </p>
-
-    </section>
+    <div id="content-stage" class="content-stage">
 
 
-    <!-- =========================================================
-         RESEARCH
-    ========================================================== -->
+      <!-- =======================================================
+           ABOUT
+      ======================================================== -->
 
-    <section id="research" aria-labelledby="research-heading">
+      <section
+        id="about"
+        class="site-section"
+        data-section="about"
+      >
 
-      <h2 id="research-heading">Research</h2>
+        <h2>About</h2>
 
-      <p class="research-lead">
-        I care about what it means to mean. Sometimes I think of myself as a
-        chemist, but for language. Just as a chemist wants to know the laws by
-        which molecules come together, and don't, I want to know the laws by
-        which meanings come together, and don't. Consider this sentence:
-      </p>
+        <p>
+          I have a PhD in Philosophy from Rutgers University. I have done
+          coursework and research in philosophy at UChicago, Cambridge (UK),
+          UConn, and Notre Dame. I am an analytic philosopher, specializing in
+          language and logic but also highly interested in metaphysics,
+          epistemology, and occasionally even beyond.
+        </p>
 
-      <p class="research-example">
-        <em>Eno was in Bali in September of 2026.</em>
-      </p>
+        <p>
+          I was born in Albania, raised in Greece, and I now live in New York City.
+        </p>
 
-      <p>
-        You have almost certainly never encountered that sentence before. Yet
-        you almost certainly understood it immediately. Somehow, your knowledge
-        of the meanings of its parts, together with your knowledge of how those
-        parts are put together, allowed you to arrive at, indeed construct, a
-        meaning for the whole.
-      </p>
-
-      <p>
-        But what exactly are the laws governing that process? For not all
-        meanings can be put together. Consider:
-      </p>
-
-      <p class="research-example">
-        <em>More people have been to Bali than I have.</em>
-      </p>
-
-      <p>
-        Grammatically, this looks fine. But somehow, the meanings of the
-        individual words and phrases fail to come together into a meaningful
-        sentence; they resist being assembled into a coherent whole.
-      </p>
-
-      <p>
-        My work asks what governs successes and failures of this kind,
-        especially with expressions of possibility and necessity—words such as
-        <em>must</em> and <em>if</em>. These expressions let us describe what
-        might or must happen, what someone believes, what ought to happen, and
-        what would happen under different circumstances. I want to know what
-        they contribute to the sentences that contain them, and what principles
-        constrain the ways those meanings combine.
-      </p>
-
-      <p>
-        For those in the know: my main research is in formal semantics, with
-        connections to syntax and pragmatics. I work especially on intensional
-        expressions—epistemic and deontic modals, propositional attitude
-        reports, grammatical mood, conditionals, and tense—and on their
-        interaction with reference. A central strand of my work concerns
-        binding into intensional contexts. I develop a two-dimensional approach
-        on which natural-language variables can range over two-dimensional
-        individual concepts. I also develop a referential theory of
-        conditionals, treating conditional antecedents as plural Russellian
-        definite descriptions of possible worlds. Among other things, this
-        gives rise to an unusual and, I think, philosophically interesting
-        logic of conditionals.
-      </p>
-
-      <p>
-        More broadly, I am interested in the foundations and limits of semantic
-        theory. Recently, for example, I have been thinking about the
-        possibility of <em>semantic akrasia</em>: whether a speaker can judge
-        that an expression means one thing while nevertheless continuing, in
-        some significant sense, to mean something else by it. And of course:
-        the good ol' semantics/pragmatics boundary.
-      </p>
-
-      <p>
-        My work also sometimes veers into neighboring areas of philosophy,
-        especially metaphysics and metaethics. I also have a longstanding
-        interest in non-classical logic, particularly relevance and connexive
-        logics, and in the history of analytic philosophy, especially Frege and
-        the early Wittgenstein (especially his theory of nonsense).
-      </p>
-
-    </section>
+      </section>
 
 
-    <!-- =========================================================
-         PUBLICATIONS / CV
+      <!-- =======================================================
+           RESEARCH
+      ======================================================== -->
 
-         Kept commented out for now so you can restore these later.
-    ========================================================== -->
+      <section
+        id="research"
+        class="site-section"
+        data-section="research"
+        aria-labelledby="research-heading"
+      >
 
-    <!--
-    <section id="publications">
+        <h2 id="research-heading">Research</h2>
 
-      <h2>Publications</h2>
+        <p class="research-lead">
+          I care about what it means to mean. Sometimes I think of myself as a
+          chemist, but for language. Just as a chemist wants to know the laws by
+          which molecules come together, and don't, I want to know the laws by
+          which meanings come together, and don't. Consider this sentence:
+        </p>
 
-      <h3>Published</h3>
+        <p class="research-example">
+          <em>Eno was in Bali in September of 2026.</em>
+        </p>
 
-      <ul>
-        <li>
-          <a href="https://doi.org/10.1007/s10988-023-09389-y">
-            The Complex Lives of Proper Names
+        <p>
+          You have almost certainly never encountered that sentence before. Yet
+          you almost certainly understood it immediately. Somehow, your knowledge
+          of the meanings of its parts, together with your knowledge of how those
+          parts are put together, allowed you to arrive at, indeed construct, a
+          meaning for the whole.
+        </p>
+
+        <p>
+          But what exactly are the laws governing that process? For not all
+          meanings can be put together. Consider:
+        </p>
+
+        <p class="research-example">
+          <em>More people have been to Bali than I have.</em>
+        </p>
+
+        <p>
+          Grammatically, this looks fine. But somehow, the meanings of the
+          individual words and phrases fail to come together into a meaningful
+          sentence; they resist being assembled into a coherent whole.
+        </p>
+
+        <p>
+          My work asks what governs successes and failures of this kind,
+          especially with expressions of possibility and necessity—words such as
+          <em>must</em> and <em>if</em>. These expressions let us describe what
+          might or must happen, what someone believes, what ought to happen, and
+          what would happen under different circumstances. I want to know what
+          they contribute to the sentences that contain them, and what principles
+          constrain the ways those meanings combine.
+        </p>
+
+        <p>
+          For those in the know: my main research is in formal semantics, with
+          connections to syntax and pragmatics. I work especially on intensional
+          expressions—epistemic and deontic modals, propositional attitude
+          reports, grammatical mood, conditionals, and tense—and on their
+          interaction with reference. A central strand of my work concerns
+          binding into intensional contexts. I develop a two-dimensional approach
+          on which natural-language variables can range over two-dimensional
+          individual concepts. I also develop a referential theory of
+          conditionals, treating conditional antecedents as plural Russellian
+          definite descriptions of possible worlds. Among other things, this
+          gives rise to an unusual and, I think, philosophically interesting
+          logic of conditionals.
+        </p>
+
+        <p>
+          More broadly, I am interested in the foundations and limits of semantic
+          theory. Recently, for example, I have been thinking about the
+          possibility of <em>semantic akrasia</em>: whether a speaker can judge
+          that an expression means one thing while nevertheless continuing, in
+          some significant sense, to mean something else by it. And of course:
+          the good ol' semantics/pragmatics boundary.
+        </p>
+
+        <p>
+          My work also sometimes veers into neighboring areas of philosophy,
+          especially metaphysics and metaethics. I also have a longstanding
+          interest in non-classical logic, particularly relevance and connexive
+          logics, and in the history of analytic philosophy, especially Frege and
+          the early Wittgenstein (especially his theory of nonsense).
+        </p>
+
+      </section>
+
+
+      <!-- =======================================================
+           ANALYTIC SALON
+      ======================================================== -->
+
+      <section
+        id="salon"
+        class="site-section"
+        data-section="salon"
+      >
+
+        <h2>Analytic Philosophy Salon</h2>
+
+        <p>
+          I also run
+          <a href="https://analytic-salon-nyc.github.io/">
+            The Analytic Salon
           </a>,
-          <em>Linguistics and Philosophy</em> (2023).
+          a public-facing discussion series in New York built around a simple
+          idea: analytic philosophy can be rigorous without being cloistered.
+          Each session begins with a problem worth getting stuck on, usually
+          introduced by an invited philosopher, and then opens into structured
+          conversation with the room. We have discussed topics ranging from
+          decision theory to metaphysics, with an emphasis on clarity,
+          disagreement, and the pleasure of thinking together.
+        </p>
 
-          <div class="note">
-            On the semantics of proper names; argues that names are predicates
-            and, in argument position, the predicative component of covert
-            definite descriptions.
-          </div>
-        </li>
-      </ul>
-
-      <h3>Under review / in progress</h3>
-
-      <ul>
-        <li>
-          <strong>Paper 1.</strong>
-          On the truth-value of conditionals with impossible antecedents.
-        </li>
-
-        <li>
-          <strong>Paper 2.</strong>
-          On analyzing modality in natural language as explicit quantification
-          over possible worlds.
-        </li>
-
-        <li>
-          <strong>Paper 3.</strong>
-          In defense of necessitarianism.
-        </li>
-
-        <li>
-          <strong>Paper 4.</strong>
-          On a counterpart semantics for de re attitude reports.
-        </li>
-      </ul>
-
-      <p class="muted">For drafts, please email.</p>
-
-    </section>
-    -->
+      </section>
 
 
-    <!-- =========================================================
-         ANALYTIC SALON
-    ========================================================== -->
+      <!-- =======================================================
+           MISC.
+      ======================================================== -->
 
-    <section id="salon">
+      <section
+        id="misc"
+        class="site-section"
+        data-section="misc"
+      >
 
-      <h2>Analytic Philosophy Salon</h2>
+        <h2>Misc.</h2>
 
-      <p>
-        I also run
-        <a href="https://analytic-salon-nyc.github.io/">The Analytic Salon</a>,
-        a public-facing discussion series in New York built around a simple
-        idea: analytic philosophy can be rigorous without being cloistered.
-        Each session begins with a problem worth getting stuck on, usually
-        introduced by an invited philosopher, and then opens into structured
-        conversation with the room. We have discussed topics ranging from
-        decision theory to metaphysics, with an emphasis on clarity,
-        disagreement, and the pleasure of thinking together.
-      </p>
+        <p>
+          I (mostly) exist outside of academia too. I’m an active poet. My first
+          book of poetry, <em>Ποιητικό Αίτιο</em> (Poetic Cause), was published
+          in April 2015 in Greece and received the Varveris Prize (2016). My
+          second book, <em>Παράξενα Φρούτα που Κρέμονται</em> (Strange Fruit
+          Hanging), was published in November 2023. A third book is in the making.
+        </p>
 
-    </section>
+        <p>
+          I love languages, human and otherwise. I speak Albanian, English,
+          Modern Greek, Portuguese, Spanish, and French at an intermediate level
+          or higher. I can read Ancient Greek, and can understand some very basic
+          Arabic and Norwegian. I’m also learning how to code in Python and
+          CSS/HTML.
+        </p>
+
+        <p>
+          I love hiking, good wine, the <em>New Yorker</em>, volleyball, and jazz.
+        </p>
+
+      </section>
 
 
-    <!-- =========================================================
-         MISC
-    ========================================================== -->
+      <!-- =======================================================
+           FOR STUDENTS
+      ======================================================== -->
 
-    <section id="misc">
+      <section
+        id="for-students"
+        class="site-section"
+        data-section="students"
+      >
 
-      <h2>Misc.</h2>
+        <h2>Are you a student?</h2>
 
-      <p>
-        I (mostly) exist outside of academia too. I’m an active poet. My first
-        book of poetry, <em>Ποιητικό Αίτιο</em> (Poetic Cause), was published
-        in April 2015 in Greece and received the Varveris Prize (2016). My
-        second book, <em>Παράξενα Φρούτα που Κρέμονται</em> (Strange Fruit
-        Hanging), was published in November 2023. A third book is in the making.
-      </p>
+        <p>
+          I’ve been a philosophy student for most of my life. It was tough much
+          of the time, mainly because I had no guidance and had to figure it out
+          mostly on my own—from whether to study philosophy, to how to do
+          philosophy, to how to craft a successful application for philosophy
+          grad school. I want to give back some of what I learned.
+        </p>
 
-      <p>
-        I love languages, human and otherwise. I speak Albanian, English,
-        Modern Greek, Portuguese, Spanish, and French at an intermediate level
-        or higher. I can read Ancient Greek, and can understand some very basic
-        Arabic and Norwegian. I’m also learning how to code in Python and
-        CSS/HTML.
-      </p>
+        <p>
+          If you are a student—in high school, college, or graduate school—feel
+          free to email me. I can offer general advice, read a personal
+          statement, and give feedback on a writing sample. I have transferred
+          across three PhD programs, so I can also help with that.
+        </p>
 
-      <p>
-        I love hiking, good wine, the <em>New Yorker</em>, volleyball, and jazz.
-      </p>
+      </section>
 
-    </section>
+    </div>
 
 
     <!-- =========================================================
-         FOR STUDENTS
+         INTERACTIVE COMMAND AREA
+
+         Because this comes AFTER content-stage, every newly
+         revealed section appears above it. The prompt therefore
+         naturally moves downward as the visitor discovers the site.
     ========================================================== -->
 
-    <section id="for-students">
+    <div class="discovery" id="discovery">
 
-      <h2>Are you a student?</h2>
+      <div
+        id="command-response"
+        class="command-response"
+        aria-live="polite"
+        aria-atomic="true"
+      ></div>
 
-      <p>
-        I’ve been a philosophy student for most of my life. It was tough much
-        of the time, mainly because I had no guidance and had to figure it out
-        mostly on my own—from whether to study philosophy, to how to do
-        philosophy, to how to craft a successful application for philosophy
-        grad school. I want to give back some of what I learned.
+
+      <p class="discovery-question">
+        What would you like to know?
       </p>
 
-      <p>
-        If you are a student—in high school, college, or graduate school—feel
-        free to email me. I can offer general advice, read a personal
-        statement, and give feedback on a writing sample. I have transferred
-        across three PhD programs, so I can also help with that.
-      </p>
 
-    </section>
+      <form
+        id="command-form"
+        class="command-form"
+        autocomplete="off"
+      >
+
+        <label
+          class="visually-hidden"
+          for="command-input"
+        >
+          Enter a command
+        </label>
+
+
+        <div class="command-line">
+
+          <span
+            class="prompt-mark"
+            aria-hidden="true"
+          >
+            ›
+          </span>
+
+          <input
+            id="command-input"
+            class="command-input"
+            type="text"
+            name="command"
+            placeholder="research"
+            autocomplete="off"
+            autocapitalize="none"
+            spellcheck="false"
+          />
+
+        </div>
+
+      </form>
+
+
+      <!--
+        These work like commands.
+        They are especially useful on phones.
+      -->
+
+      <div
+        class="command-suggestions"
+        aria-label="Suggested commands"
+      >
+
+        <button type="button" data-command="about">
+          about
+        </button>
+
+        <button type="button" data-command="research">
+          research
+        </button>
+
+        <button type="button" data-command="salon">
+          salon
+        </button>
+
+        <button type="button" data-command="misc">
+          misc
+        </button>
+
+        <button type="button" data-command="students">
+          students
+        </button>
+
+        <button type="button" data-command="help">
+          help
+        </button>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="show-all-button"
+        data-command="all"
+      >
+        show all
+      </button>
+
+    </div>
 
 
     <!-- =========================================================
@@ -339,47 +430,879 @@
 
 
   <!-- =========================================================
-       SCROLL REVEAL
+       INTERACTION LOGIC
   ========================================================== -->
 
   <script>
+
     window.addEventListener('DOMContentLoaded', () => {
 
+
+      /* ---------------------------------------------------------
+         BASIC ELEMENTS
+      --------------------------------------------------------- */
+
+      const stage =
+        document.getElementById('content-stage');
+
       const sections =
-        document.querySelectorAll('main.page > section');
+        Array.from(document.querySelectorAll('.site-section'));
 
-      const observer = new IntersectionObserver(
-        (entries, obs) => {
+      const commandForm =
+        document.getElementById('command-form');
 
-          entries.forEach(entry => {
+      const commandInput =
+        document.getElementById('command-input');
 
-            if (entry.isIntersecting) {
-              entry.target.classList.add('reveal');
-              obs.unobserve(entry.target);
-            }
+      const response =
+        document.getElementById('command-response');
+
+      const commandButtons =
+        document.querySelectorAll('[data-command]');
+
+
+      /*
+        Remember the original order so "all" and "clear"
+        can restore it.
+      */
+
+      const canonicalOrder = [
+        'about',
+        'research',
+        'salon',
+        'misc',
+        'students'
+      ];
+
+
+      /*
+        Is a section already visible?
+      */
+
+      function isVisible(section) {
+        return section.classList.contains('is-visible');
+      }
+
+
+
+      /* ---------------------------------------------------------
+         COMMAND ALIASES
+
+         The interface is intentionally forgiving.
+      --------------------------------------------------------- */
+
+      const aliases = {
+
+        about: [
+          'about',
+          'me',
+          'bio',
+          'biography',
+          'background',
+          'who',
+          'who are you',
+          'who is eno',
+          'eno'
+        ],
+
+        research: [
+          'research',
+          'work',
+          'academic work',
+          'papers',
+          'paper',
+          'philosophy',
+          'semantics',
+          'projects',
+          'scholarship',
+          'what do you work on',
+          'what are you working on'
+        ],
+
+        salon: [
+          'salon',
+          'analytic salon',
+          'the analytic salon',
+          'events',
+          'event',
+          'discussion',
+          'discussion series',
+          'philosophy salon'
+        ],
+
+        misc: [
+          'misc',
+          'miscellaneous',
+          'personal',
+          'outside academia',
+          'poetry',
+          'poet',
+          'books',
+          'languages',
+          'hobbies',
+          'interests'
+        ],
+
+        students: [
+          'students',
+          'student',
+          'for students',
+          'advice',
+          'mentoring',
+          'mentor',
+          'mentorship',
+          'graduate school',
+          'grad school'
+        ],
+
+        help: [
+          'help',
+          'commands',
+          'command',
+          'menu',
+          '?',
+          'what can i type',
+          'what can i ask'
+        ],
+
+        all: [
+          'all',
+          'show all',
+          'show everything',
+          'everything',
+          'full site',
+          'whole site',
+          'reveal all'
+        ],
+
+        clear: [
+          'clear',
+          'reset',
+          'start over',
+          'hide all',
+          'close all'
+        ],
+
+        cv: [
+          'cv',
+          'curriculum vitae',
+          'resume',
+          'résumé'
+        ],
+
+        contact: [
+          'contact',
+          'email',
+          'email me',
+          'contact me'
+        ]
+
+      };
+
+
+
+      /* ---------------------------------------------------------
+         NORMALIZE TYPED INPUT
+      --------------------------------------------------------- */
+
+      function normalizeCommand(value) {
+
+        return value
+          .toLowerCase()
+          .trim()
+          .replace(/[.!,:;]+$/g, '')
+          .replace(/\s+/g, ' ');
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         WORK OUT WHICH COMMAND THE USER MEANS
+      --------------------------------------------------------- */
+
+      function resolveCommand(value) {
+
+        const normalized =
+          normalizeCommand(value);
+
+
+        for (const [command, variants] of Object.entries(aliases)) {
+
+          if (variants.includes(normalized)) {
+            return command;
+          }
+
+        }
+
+
+        /*
+          A little extra forgiveness for phrases such as:
+          "show me your research"
+          "tell me about the salon"
+        */
+
+        if (normalized.includes('research') ||
+            normalized.includes('paper') ||
+            normalized.includes('semantics')) {
+          return 'research';
+        }
+
+        if (normalized.includes('salon')) {
+          return 'salon';
+        }
+
+        if (normalized.includes('student') ||
+            normalized.includes('mentor')) {
+          return 'students';
+        }
+
+        if (normalized.includes('poetry') ||
+            normalized.includes('poet') ||
+            normalized.includes('language')) {
+          return 'misc';
+        }
+
+        if (normalized.includes('about you') ||
+            normalized.includes('background')) {
+          return 'about';
+        }
+
+
+        return null;
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         SHORT RESPONSES
+
+         These appear briefly before a requested section
+         is revealed.
+      --------------------------------------------------------- */
+
+      const summonResponses = {
+
+        about:
+          'A little context.',
+
+        research:
+          'Research, then.',
+
+        salon:
+          'The Analytic Salon:',
+
+        misc:
+          'Outside academia:',
+
+        students:
+          'For students:'
+
+      };
+
+
+
+      /* ---------------------------------------------------------
+         FIND A SECTION
+      --------------------------------------------------------- */
+
+      function getSection(name) {
+
+        return document.querySelector(
+          `.site-section[data-section="${name}"]`
+        );
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         SHOW RESPONSE TEXT
+      --------------------------------------------------------- */
+
+      function setResponse(text, html = false) {
+
+        response.classList.remove('response-visible');
+
+
+        if (html) {
+          response.innerHTML = text;
+        } else {
+          response.textContent = text;
+        }
+
+
+        /*
+          Restart the small entrance animation.
+        */
+
+        void response.offsetWidth;
+
+        response.classList.add('response-visible');
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         REVEAL ONE SECTION
+      --------------------------------------------------------- */
+
+      function revealSection(name, options = {}) {
+
+        const {
+          scroll = true,
+          changeHash = true,
+          conversational = true
+        } = options;
+
+
+        const section =
+          getSection(name);
+
+
+        if (!section) return;
+
+
+        /*
+          If it has already been opened, simply return to it.
+        */
+
+        if (isVisible(section)) {
+
+          setResponse(
+            `You've already opened ${section.querySelector('h2').textContent.toLowerCase()}.`
+          );
+
+          section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+          return;
+        }
+
+
+        /*
+          Brief conversational acknowledgement.
+        */
+
+        if (conversational) {
+          setResponse(summonResponses[name]);
+        }
+
+
+        /*
+          Move the section to the end of the stage.
+          This makes visible sections appear in the order
+          the visitor requested them.
+        */
+
+        stage.appendChild(section);
+
+
+        /*
+          A short delay makes the acknowledgement perceptible
+          before the requested material appears.
+        */
+
+        setTimeout(() => {
+
+          section.classList.add('is-visible');
+
+
+          if (changeHash) {
+
+            history.replaceState(
+              null,
+              '',
+              '#' + section.id
+            );
+
+          }
+
+
+          /*
+            On typed mobile commands, close the keyboard.
+          */
+
+          commandInput.blur();
+
+
+          if (scroll) {
+
+            setTimeout(() => {
+
+              section.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+
+            }, 80);
+
+          }
+
+        }, conversational ? 280 : 0);
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         SHOW EVERYTHING
+      --------------------------------------------------------- */
+
+      function showAll() {
+
+        setResponse(
+          'All right. Everything at once.'
+        );
+
+
+        /*
+          Restore the normal editorial order.
+        */
+
+        canonicalOrder.forEach(name => {
+
+          const section =
+            getSection(name);
+
+          if (section) {
+            stage.appendChild(section);
+          }
+
+        });
+
+
+        setTimeout(() => {
+
+          canonicalOrder.forEach((name, index) => {
+
+            const section =
+              getSection(name);
+
+            if (!section) return;
+
+
+            setTimeout(() => {
+
+              section.classList.add('is-visible');
+
+            }, index * 90);
 
           });
 
-        },
-        {
-          /*
-            A low threshold is important on mobile:
-            long sections no longer need to fit substantially
-            inside the viewport before appearing.
-          */
-          threshold: 0.08,
 
-          /*
-            Reveal a little before the section reaches
-            the very bottom of the viewport.
-          */
-          rootMargin: "0px 0px -8% 0px"
+          history.replaceState(
+            null,
+            '',
+            window.location.pathname + window.location.search
+          );
+
+
+        }, 220);
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         CLEAR EVERYTHING
+      --------------------------------------------------------- */
+
+      function clearAll() {
+
+        setResponse(
+          'Cleared. What next?'
+        );
+
+
+        sections.forEach(section => {
+          section.classList.remove('is-visible');
+        });
+
+
+        /*
+          Put the hidden sections back in canonical order.
+        */
+
+        canonicalOrder.forEach(name => {
+
+          const section =
+            getSection(name);
+
+          if (section) {
+            stage.appendChild(section);
+          }
+
+        });
+
+
+        history.replaceState(
+          null,
+          '',
+          window.location.pathname + window.location.search
+        );
+
+
+        setTimeout(() => {
+          commandInput.focus();
+        }, 100);
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         HELP
+      --------------------------------------------------------- */
+
+      function showHelp() {
+
+        setResponse(
+          `
+          <span class="help-intro">You can ask for:</span>
+          <span class="help-commands">
+            about · research · salon · misc · students
+          </span>
+          <span class="help-extra">
+            Or try <strong>all</strong>, <strong>clear</strong>,
+            <strong>cv</strong>, or <strong>contact</strong>.
+          </span>
+          `,
+          true
+        );
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         CV
+      --------------------------------------------------------- */
+
+      function showCVMessage() {
+
+        setResponse(
+          `No CV here yet. Try <strong>research</strong> instead.`,
+          true
+        );
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         CONTACT
+      --------------------------------------------------------- */
+
+      function showContact() {
+
+        setResponse(
+          `
+          Email me at
+          <span class="email-response">
+            agollieno [at] gmail [dot] com
+          </span>.
+          `,
+          true
+        );
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         UNKNOWN COMMAND
+      --------------------------------------------------------- */
+
+      function showUnknown(value) {
+
+        const cleaned =
+          value.trim();
+
+
+        setResponse(
+          `
+          I don't quite know what to do with
+          <span class="unknown-command">“${escapeHTML(cleaned)}”</span>.
+          Try <strong>help</strong>.
+          `,
+          true
+        );
+
+      }
+
+
+
+      /*
+        Prevent typed text from becoming executable HTML
+        in the unknown-command response.
+      */
+
+      function escapeHTML(text) {
+
+        const div =
+          document.createElement('div');
+
+        div.textContent = text;
+
+        return div.innerHTML;
+
+      }
+
+
+
+      /* ---------------------------------------------------------
+         RUN A COMMAND
+      --------------------------------------------------------- */
+
+      function runCommand(rawCommand) {
+
+        if (!rawCommand.trim()) return;
+
+
+        const command =
+          resolveCommand(rawCommand);
+
+
+        commandInput.value = '';
+
+
+        switch (command) {
+
+          case 'about':
+          case 'research':
+          case 'salon':
+          case 'misc':
+          case 'students':
+
+            revealSection(command);
+            break;
+
+
+          case 'help':
+
+            showHelp();
+            break;
+
+
+          case 'all':
+
+            showAll();
+            break;
+
+
+          case 'clear':
+
+            clearAll();
+            break;
+
+
+          case 'cv':
+
+            showCVMessage();
+            break;
+
+
+          case 'contact':
+
+            showContact();
+            break;
+
+
+          default:
+
+            showUnknown(rawCommand);
+
         }
-      );
 
-      sections.forEach(section => observer.observe(section));
+      }
+
+
+
+      /* ---------------------------------------------------------
+         TYPING
+      --------------------------------------------------------- */
+
+      commandForm.addEventListener('submit', event => {
+
+        event.preventDefault();
+
+        runCommand(commandInput.value);
+
+      });
+
+
+
+      /* ---------------------------------------------------------
+         TAPPABLE COMMANDS
+      --------------------------------------------------------- */
+
+      commandButtons.forEach(button => {
+
+        button.addEventListener('click', () => {
+
+          runCommand(button.dataset.command);
+
+        });
+
+      });
+
+
+
+      /* ---------------------------------------------------------
+         ROTATING PLACEHOLDER SUGGESTIONS
+      --------------------------------------------------------- */
+
+      const placeholderIdeas = [
+        'research',
+        'analytic salon',
+        'about',
+        'poetry',
+        'students',
+        'help'
+      ];
+
+
+      let placeholderIndex = 0;
+
+
+      setInterval(() => {
+
+        /*
+          Do nothing while the visitor is typing.
+        */
+
+        if (
+          document.activeElement === commandInput ||
+          commandInput.value !== ''
+        ) {
+          return;
+        }
+
+
+        placeholderIndex =
+          (placeholderIndex + 1) % placeholderIdeas.length;
+
+
+        commandInput.placeholder =
+          placeholderIdeas[placeholderIndex];
+
+      }, 2400);
+
+
+
+      /* ---------------------------------------------------------
+         DIRECT LINKS
+
+         Visiting:
+           website.com/#research
+           website.com/#salon
+           website.com/#for-students
+
+         opens that material automatically.
+      --------------------------------------------------------- */
+
+      function openFromHash() {
+
+        const hash =
+          window.location.hash.replace('#', '');
+
+
+        if (!hash) return;
+
+
+        const hashMap = {
+          'about': 'about',
+          'research': 'research',
+          'salon': 'salon',
+          'misc': 'misc',
+          'for-students': 'students',
+          'students': 'students'
+        };
+
+
+        const command =
+          hashMap[hash];
+
+
+        if (!command) return;
+
+
+        revealSection(
+          command,
+          {
+            scroll: false,
+            changeHash: false,
+            conversational: false
+          }
+        );
+
+
+        setTimeout(() => {
+
+          const section =
+            getSection(command);
+
+
+          if (section) {
+
+            section.scrollIntoView({
+              behavior: 'auto',
+              block: 'start'
+            });
+
+          }
+
+        }, 80);
+
+      }
+
+
+      openFromHash();
+
+
+
+      /* ---------------------------------------------------------
+         BROWSER BACK / FORWARD HASH CHANGES
+      --------------------------------------------------------- */
+
+      window.addEventListener('hashchange', () => {
+
+        const hash =
+          window.location.hash.replace('#', '');
+
+
+        const hashMap = {
+          'about': 'about',
+          'research': 'research',
+          'salon': 'salon',
+          'misc': 'misc',
+          'for-students': 'students',
+          'students': 'students'
+        };
+
+
+        if (hashMap[hash]) {
+
+          revealSection(
+            hashMap[hash],
+            {
+              scroll: true,
+              changeHash: false,
+              conversational: false
+            }
+          );
+
+        }
+
+      });
 
     });
+
   </script>
 
 </body>

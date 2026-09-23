@@ -1,146 +1,555 @@
-/* Minimal academic style (crisp + airy) */
+/* =========================================================
+   SITE VARIABLES
+========================================================= */
 
-/* Global “theme” variables: change these once and the whole site updates. */
 :root{
-  --fg: #111;        /* main text color */
-  --muted: #666;     /* secondary text color */
-  --link: #0b57d0;   /* link color */
-  --bg: #f6f6f6;     /* very light gray background (was #fff) */
-  --max: 740px;      /* max text column width (narrower feels airier) */
+  --fg: #111111;
+  --muted: #666666;
+  --link: #0b57d0;
+  --bg: #f6f6f6;
+  --rule: #dedede;
+
+  --max: 740px;
 }
 
-/* Apply background to the whole page */
-html, body { background: var(--bg); }
 
-/* Global typography defaults */
+/* =========================================================
+   PAGE
+========================================================= */
+
+html{
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
 body{
-  margin: 0;                                 /* remove browser default margins */
+  margin: 0;
+
+  background: var(--bg);
   color: var(--fg);
-  font-family: "Times New Roman", Times, serif; /* your font */
-  font-size: 15px;                           /* smaller base font (was 16px) */
-  line-height: 1.68;                         /* airier line spacing */
+
+  /*
+    Keeps the academic serif character of the site,
+    but looks less browser-default than Times New Roman.
+  */
+  font-family:
+    "Iowan Old Style",
+    "Palatino Linotype",
+    "Book Antiqua",
+    Palatino,
+    Georgia,
+    serif;
+
+  font-size: 15px;
+  line-height: 1.68;
+
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
+
 /* Main centered column */
+
 .page{
-  max-width: var(--max);         /* uses --max above */
-  padding: 56px 20px 84px;       /* more whitespace around content */
-  margin: 0 auto;                /* center the column */
+  max-width: var(--max);
+  margin: 0 auto;
+
+  padding:
+    56px
+    22px
+    84px;
 }
 
-/* Space under the header block (name/intro/nav) */
-.top{ margin-bottom: 44px; }
 
-/* Big title */
+/* =========================================================
+   HEADER
+========================================================= */
+
+.top{
+  margin-bottom: 52px;
+}
+
+
+/*
+  Text on left, portrait on right.
+*/
+
+.hero{
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    128px;
+
+  gap: 38px;
+
+  align-items: start;
+}
+
+
+.hero-text{
+  min-width: 0;
+}
+
+
+/* Name */
+
 h1{
-  font-size: 28px;
+  margin:
+    0
+    0
+    9px
+    0;
+
+  font-size: 29px;
+  line-height: 1.15;
+
   font-weight: 600;
-  margin: 0 0 10px 0;
+  letter-spacing: -0.01em;
 }
 
-/* Intro lines */
-.lede{ margin: 0 0 10px 0; text-align: left; }     /* keep left-aligned */
-.contact{ margin: 0 0 20px 0; text-align: left; }  /* keep left-aligned */
 
-/* Top navigation layout */
+/* Professional titles */
+
+.lede{
+  margin:
+    0
+    0
+    10px
+    0;
+
+  line-height: 1.55;
+}
+
+
+/*
+  Puts the two jobs on separate lines.
+*/
+
+.lede span{
+  display: block;
+}
+
+
+/* Email */
+
+.contact{
+  margin:
+    0
+    0
+    19px
+    0;
+}
+
+
+/* Portrait */
+
+.portrait{
+  display: block;
+
+  width: 128px;
+  height: 160px;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 3px;
+
+  /*
+    Extremely subtle desaturation so the image sits
+    comfortably with the restrained design.
+  */
+  filter: saturate(0.92);
+
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
 .nav{
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 14px;     /* vertical, horizontal spacing between nav links */
-  margin: 0 0 4px 0;
+
+  gap:
+    8px
+    15px;
+
+  margin: 0;
 }
 
-/* Nav link styling */
+
 .nav a{
-  text-decoration: none;
   color: var(--link);
-  text-transform: lowercase;  /* keep your “about / research …” style */
-  letter-spacing: 0.01em;    /* LESS letter spacing (was 0.02em) */
-}
-.nav a:hover{ text-decoration: underline; }
 
-/* BIGGER spacing between sections */
-section{ margin: 95px 0 0 0; }  /* was 34px */
+  text-decoration: none;
+  text-transform: lowercase;
+
+  letter-spacing: 0.01em;
+}
+
+
+.nav a:hover,
+.nav a:focus{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+/*
+  Reduced from 95px.
+
+  This still leaves generous whitespace, but makes it
+  easier for the next section to begin entering the viewport,
+  which gives the reader a visual sense that the page continues.
+*/
+
+section{
+  margin:
+    76px
+    0
+    0
+    0;
+
+  /*
+    Gives anchored navigation some breathing room.
+  */
+  scroll-margin-top: 32px;
+}
+
 
 /* Section headings */
+
 h2{
+  margin:
+    0
+    0
+    12px
+    0;
+
   font-size: 15px;
+  line-height: 1.4;
+
   font-weight: 700;
-  margin: 0 0 10px 0;
-  text-transform: none;
-  letter-spacing: 0;           /* ensure no extra tracking */
-}
-h3{
-  font-size: 14px;
-  font-weight: 700;
-  margin: 18px 0 8px 0;
-  text-transform: none;
+
   letter-spacing: 0;
 }
 
-/* Paragraph spacing + “blocky” justification */
+
+/* Smaller headings if you restore publications later */
+
+h3{
+  margin:
+    20px
+    0
+    8px
+    0;
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
 p{
-  margin: 0 0 14px 0;          /* more space between paragraphs */
+  margin:
+    0
+    0
+    15px
+    0;
 }
 
-/* Square-justified blocks (requested)
-   Applies only inside sections so your header/nav stays normal. */
-section p, section li{
+
+/*
+  Justification works nicely at this relatively narrow
+  desktop measure.
+*/
+
+section p,
+section li{
   text-align: justify;
-  text-justify: inter-word;    /* helps justification in some browsers */
-  hyphens: auto;               /* reduces ugly gaps (“rivers”) */
+  text-justify: inter-word;
+
+  hyphens: auto;
 }
 
-/* Lists */
+
+/* =========================================================
+   RESEARCH
+========================================================= */
+
+/*
+  Slight extra separation before the first example.
+*/
+
+.research-lead{
+  margin-bottom: 17px;
+}
+
+
+/*
+  Linguistic examples get a small visual identity without
+  turning them into large quotation blocks.
+*/
+
+.research-example{
+  margin:
+    22px
+    0;
+
+  padding-left: 18px;
+
+  border-left:
+    2px
+    solid
+    var(--rule);
+
+  font-size: 1.03em;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a{
+  color: var(--link);
+}
+
+a:visited{
+  color: var(--link);
+}
+
+a:hover{
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+
+/* =========================================================
+   LISTS
+========================================================= */
+
 ul{
-  margin: 0 0 14px 20px;       /* bottom margin + indent */
+  margin:
+    0
+    0
+    14px
+    20px;
+
   padding: 0;
 }
-li{ margin: 0 0 10px 0; }
 
-/* Links */
-a{ color: var(--link); }
-a:visited{ color: var(--link); }
-
-/* Muted text */
-.note{ color: var(--muted); margin-top: 4px; }
-.muted{ color: var(--muted); }
-
-/* Footer */
-.footer{
-  margin-top: 44px;
-  padding-top: 18px;
-  border-top: 1px solid #e5e5e5; /* adjusted for light-gray background */
+li{
+  margin:
+    0
+    0
+    10px
+    0;
 }
 
-/* Monospace for code snippets */
-code{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+/* =========================================================
+   SECONDARY TEXT
+========================================================= */
+
+.note{
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.muted{
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+  margin-top: 68px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px
+    solid
+    var(--rule);
+
   font-size: 0.92em;
 }
 
-/* Fade-in on scroll (only when JS is enabled) */
-.js section{
-  opacity: 0;
-  transform: translateY(18px); /* bigger movement */
-  transition: opacity 1100ms ease, transform 1100ms ease; /* slower */
-  will-change: opacity, transform;
+.footer p{
+  margin-bottom: 0;
 }
 
-/* When section is “revealed” */
+
+/* =========================================================
+   CODE
+========================================================= */
+
+code{
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace;
+
+  font-size: 0.92em;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+/*
+  Sections are hidden only if JS actually runs.
+
+  That means a script failure will never leave the site's
+  contents permanently invisible.
+*/
+
+.js section{
+  opacity: 0;
+
+  transform:
+    translateY(12px);
+
+  transition:
+    opacity 750ms ease,
+    transform 750ms ease;
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+/* Once visible */
+
 .js section.reveal{
   opacity: 1;
+
   transform: none;
 }
 
-/* Respect users who prefer reduced motion */
-@media (prefers-reduced-motion: reduce){
-  .js section{
-    opacity: 1;
-    transform: none;
-    transition: none;
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 600px){
+
+  .page{
+    padding:
+      38px
+      20px
+      62px;
   }
+
+
+  /*
+    On a phone the portrait moves above the text rather than
+    squeezing the header into two narrow columns.
+  */
+
+  .hero{
+    grid-template-columns: 1fr;
+
+    gap: 21px;
+  }
+
+
+  .portrait{
+    grid-row: 1;
+
+    width: 108px;
+    height: 135px;
+
+    margin-bottom: 2px;
+  }
+
+
+  h1{
+    font-size: 27px;
+  }
+
+
+  .top{
+    margin-bottom: 39px;
+  }
+
+
+  section{
+    margin-top: 62px;
+  }
+
+
+  /*
+    Full justification creates conspicuous spaces between
+    words on narrow phone screens, so mobile gets normal
+    left-aligned text.
+  */
+
+  section p,
+  section li{
+    text-align: left;
+    hyphens: none;
+  }
+
+
+  .research-example{
+    margin:
+      20px
+      0;
+
+    padding-left: 15px;
+  }
+
+
+  .footer{
+    margin-top: 56px;
+  }
+
 }
 
+
+/* =========================================================
+   ACCESSIBILITY: REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce){
+
+  html{
+    scroll-behavior: auto;
+  }
+
+  .js section{
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+
+}

@@ -6,17 +6,17 @@
 
   --fg: #111111;
 
-  --muted: #6a6a6a;
+  --muted: #686868;
 
-  --soft-muted: #8a8a8a;
+  --soft-muted: #969696;
 
   --link: #0b57d0;
 
   --bg: #f6f6f6;
 
-  --rule: #dcdcdc;
+  --rule: #d5d5d5;
 
-  --soft-rule: #e8e8e8;
+  --soft-rule: #e6e6e6;
 
   --max: 740px;
 
@@ -70,7 +70,7 @@ body{
   margin: 0 auto;
 
   padding:
-    56px
+    58px
     22px
     84px;
 
@@ -83,29 +83,7 @@ body{
 
 .top{
 
-  margin-bottom: 68px;
-
-}
-
-
-.hero{
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    128px;
-
-  gap: 40px;
-
-  align-items: start;
-
-}
-
-
-.hero-text{
-
-  min-width: 0;
+  margin-bottom: 66px;
 
 }
 
@@ -156,30 +134,8 @@ h1{
 }
 
 
-.portrait{
-
-  display: block;
-
-  width: 128px;
-
-  height: 160px;
-
-  object-fit: cover;
-
-  object-position: center;
-
-  border-radius: 3px;
-
-  filter: saturate(0.92);
-
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.05);
-
-}
-
-
 /* =========================================================
-   BASIC TYPOGRAPHY
+   TYPOGRAPHY
 ========================================================= */
 
 p{
@@ -215,9 +171,12 @@ h3{
   margin:
     20px
     0
-    8px;
+    8px
+    0;
 
   font-size: 14px;
+
+  line-height: 1.4;
 
   font-weight: 700;
 
@@ -252,7 +211,7 @@ a:hover{
 
 
 /* =========================================================
-   CONTENT STAGE
+   CONTENT
 ========================================================= */
 
 .content-stage{
@@ -263,9 +222,7 @@ a:hover{
 
 
 /*
-  Without JavaScript, all sections appear normally.
-
-  With JavaScript, they remain absent until summoned.
+  With JavaScript enabled, sections begin hidden.
 */
 
 .js .site-section{
@@ -276,7 +233,7 @@ a:hover{
 
 
 /*
-  When JavaScript adds .is-visible, the section enters.
+  Requested sections appear.
 */
 
 .js .site-section.is-visible{
@@ -285,7 +242,7 @@ a:hover{
 
   animation:
     sectionReveal
-    650ms
+    620ms
     cubic-bezier(0.22, 1, 0.36, 1)
     both;
 
@@ -323,7 +280,7 @@ a:hover{
 
     opacity: 0;
 
-    transform: translateY(10px);
+    transform: translateY(9px);
 
   }
 
@@ -339,7 +296,7 @@ a:hover{
 
 
 /* =========================================================
-   RESEARCH
+   RESEARCH EXAMPLES
 ========================================================= */
 
 .research-lead{
@@ -370,34 +327,66 @@ a:hover{
 
 
 /* =========================================================
+   DISCOVERED PORTRAIT
+========================================================= */
+
+.picture-section{
+
+  max-width: 420px;
+
+}
+
+
+.discovered-portrait{
+
+  display: block;
+
+  width: 100%;
+
+  max-width: 340px;
+
+  height: auto;
+
+  margin-top: 19px;
+
+  border-radius: 3px;
+
+  filter: saturate(0.94);
+
+  box-shadow:
+    0 1px 3px
+    rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* =========================================================
    DISCOVERY / COMMAND AREA
 ========================================================= */
 
 .discovery{
 
-  margin-top: 4px;
-
-  padding-top: 3px;
-
   max-width: 610px;
+
+  margin-top: 3px;
+
+  padding-top: 2px;
 
 }
 
 
 /*
-  The small response that appears when someone submits
-  a command.
+  Short conversational reply:
+  "Research, then."
+  "Since you asked."
+  etc.
 */
 
 .command-response{
 
   min-height: 0;
 
-  margin:
-    0
-    0
-    0
-    0;
+  margin: 0;
 
   color: var(--muted);
 
@@ -406,15 +395,15 @@ a:hover{
   transform: translateY(3px);
 
   transition:
-    opacity 260ms ease,
-    transform 260ms ease;
+    opacity 250ms ease,
+    transform 250ms ease;
 
 }
 
 
 .command-response:not(:empty){
 
-  margin-bottom: 18px;
+  margin-bottom: 19px;
 
 }
 
@@ -442,7 +431,7 @@ a:hover{
 
 
 /* =========================================================
-   COMMAND FORM
+   INPUT
 ========================================================= */
 
 .command-form{
@@ -463,7 +452,7 @@ a:hover{
   border-bottom:
     1px
     solid
-    #bdbdbd;
+    #bcbcbc;
 
   transition:
     border-color 180ms ease;
@@ -530,7 +519,7 @@ a:hover{
 
 .command-input::placeholder{
 
-  color: #a0a0a0;
+  color: #a2a2a2;
 
   opacity: 1;
 
@@ -538,29 +527,20 @@ a:hover{
 
 
 /* =========================================================
-   COMMAND SUGGESTIONS
+   SHOW-EVERYTHING ESCAPE HATCH
 ========================================================= */
 
-.command-suggestions{
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap:
-    7px
-    15px;
-
-  margin-top: 11px;
-
-}
-
-
-.command-suggestions button{
+.show-all-button{
 
   appearance: none;
 
-  margin: 0;
+  display: inline-block;
+
+  margin:
+    18px
+    0
+    0
+    0;
 
   padding: 0;
 
@@ -586,69 +566,20 @@ a:hover{
 }
 
 
-.command-suggestions button:hover,
-.command-suggestions button:focus-visible{
-
-  color: var(--link);
-
-  text-decoration: underline;
-
-  text-underline-offset: 3px;
-
-}
-
-
-.show-all-button{
-
-  appearance: none;
-
-  display: inline-block;
-
-  margin:
-    13px
-    0
-    0
-    0;
-
-  padding: 0;
-
-  border: 0;
-
-  background: none;
-
-  color: var(--soft-muted);
-
-  font-family: inherit;
-
-  font-size: 11px;
-
-  cursor: pointer;
-
-  text-decoration: underline;
-
-  text-decoration-color: transparent;
-
-  text-underline-offset: 3px;
-
-  transition:
-    color 150ms ease,
-    text-decoration-color 150ms ease;
-
-}
-
-
 .show-all-button:hover,
 .show-all-button:focus-visible{
 
   color: var(--link);
 
-  text-decoration-color: currentColor;
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
 
 }
 
 
 /* =========================================================
-   HELP / RESPONSE TEXT
+   RESPONSES / HELP
 ========================================================= */
 
 .help-intro{
@@ -673,7 +604,7 @@ a:hover{
 
   display: block;
 
-  margin-top: 3px;
+  margin-top: 4px;
 
 }
 
@@ -693,7 +624,7 @@ a:hover{
 
 
 /* =========================================================
-   MUTED TEXT
+   SECONDARY TEXT
 ========================================================= */
 
 .muted{
@@ -705,9 +636,9 @@ a:hover{
 
 .note{
 
-  color: var(--muted);
-
   margin-top: 4px;
+
+  color: var(--muted);
 
 }
 
@@ -718,7 +649,7 @@ a:hover{
 
 .footer{
 
-  margin-top: 78px;
+  margin-top: 76px;
 
   padding-top: 17px;
 
@@ -740,7 +671,7 @@ a:hover{
 
 
 /* =========================================================
-   SCREEN-READER-ONLY LABEL
+   ACCESSIBILITY
 ========================================================= */
 
 .visually-hidden{
@@ -776,35 +707,9 @@ a:hover{
   .page{
 
     padding:
-      36px
+      38px
       20px
       60px;
-
-  }
-
-
-  /*
-    Photo first on mobile.
-  */
-
-  .hero{
-
-    grid-template-columns: 1fr;
-
-    gap: 21px;
-
-  }
-
-
-  .portrait{
-
-    grid-row: 1;
-
-    width: 108px;
-
-    height: 135px;
-
-    margin-bottom: 1px;
 
   }
 
@@ -824,7 +729,7 @@ a:hover{
 
 
   /*
-    Justification becomes unattractive on narrow screens.
+    Justification creates excessive gaps on narrow screens.
   */
 
   .site-section p,
@@ -855,6 +760,20 @@ a:hover{
   }
 
 
+  .picture-section{
+
+    max-width: none;
+
+  }
+
+
+  .discovered-portrait{
+
+    max-width: 290px;
+
+  }
+
+
   .discovery{
 
     max-width: none;
@@ -863,50 +782,25 @@ a:hover{
 
 
   /*
-    Slightly larger tap targets without making the commands
-    look like conventional buttons.
+    16px prevents iPhones from zooming into the field.
   */
 
-  .command-suggestions{
+  .command-input{
 
-    gap:
-      3px
-      17px;
-
-    margin-top: 12px;
-
-  }
-
-
-  .command-suggestions button{
-
-    padding:
-      4px
-      0;
-
-    font-size: 13px;
+    font-size: 16px;
 
   }
 
 
   .show-all-button{
 
-    margin-top: 12px;
+    margin-top: 17px;
 
     padding:
-      4px
+      3px
       0;
 
-  }
-
-
-  /*
-    Prevents iOS from zooming into the input on focus.
-  */
-
-  .command-input{
-
-    font-size: 16px;
+    font-size: 12px;
 
   }
 
@@ -941,21 +835,8 @@ a:hover{
   }
 
 
-  .command-response{
-
-    transition: none;
-
-  }
-
-
-  .command-line{
-
-    transition: none;
-
-  }
-
-
-  .command-suggestions button,
+  .command-response,
+  .command-line,
   .show-all-button{
 
     transition: none;

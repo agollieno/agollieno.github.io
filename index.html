@@ -1,221 +1,387 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Eno Agolli</title>
+
+  <meta
+    name="description"
+    content="Éno Agólli — philosophy, language, logic, and modality"
+  />
+
+  <!--
+    Add this class immediately, before the page renders.
+    If JavaScript is unavailable, the sections remain visible normally.
+  -->
+  <script>
+    document.documentElement.classList.add('js');
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
-  <meta name="description" content="Éno Agólli — philosophy (language, logic, modality)" />
 </head>
+
+
 <body>
+
   <main class="page">
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
     <header class="top">
-      <h1>Eno Agolli</h1>
-      <p class="lede">
-        Assistant Director, Saul Kripke Center • Post‑doctoral Research Associate, CUNY Graduate Center
-      </p>
-      <p class="contact">
-        agollieno <span class="muted">[at]</span> gmail <span class="muted">[dot]</span> com
-      </p>
-      <nav class="nav">
-        <a href="#about">about</a>
-        <a href="#research">research</a>
-        <a href="#cv">cv</a>
-        <a href="#salon">analytic salon</a>
-        <a href="#misc">misc</a>
-        <a href="#for students">for students</a>
-      </nav>
+
+      <div class="hero">
+
+        <div class="hero-text">
+
+          <h1>Eno Agolli</h1>
+
+          <p class="lede">
+            <span>Assistant Director, Saul Kripke Center</span>
+            <span>Postdoctoral Research Associate, CUNY Graduate Center</span>
+          </p>
+
+          <p class="contact">
+            agollieno
+            <span class="muted">[at]</span>
+            gmail
+            <span class="muted">[dot]</span>
+            com
+          </p>
+
+          <nav class="nav" aria-label="Main navigation">
+            <a href="#about">about</a>
+            <a href="#research">research</a>
+            <a href="#salon">analytic salon</a>
+            <a href="#misc">misc</a>
+            <a href="#for-students">for students</a>
+          </nav>
+
+        </div>
+
+        <img
+          class="portrait"
+          src="images/eno.jpg"
+          alt="Portrait of Eno Agolli"
+        />
+
+      </div>
+
     </header>
 
+
+    <!-- =========================================================
+         ABOUT
+    ========================================================== -->
+
     <section id="about">
+
       <h2>About</h2>
+
       <p>
-        I have a PhD in Philosophy from Rutgers University. I have done coursework and research in philosophy at
-        UChicago, Cambridge (UK), UConn, and Notre Dame. I am an analytic philosopher, specializing in language and
-        logic but also highly interested in metaphysics, epistemology, and occasionally even beyond. 
-        
+        I have a PhD in Philosophy from Rutgers University. I have done
+        coursework and research in philosophy at UChicago, Cambridge (UK),
+        UConn, and Notre Dame. I am an analytic philosopher, specializing in
+        language and logic but also highly interested in metaphysics,
+        epistemology, and occasionally even beyond.
+      </p>
+
+      <p>
         I was born in Albania, raised in Greece, and I now live in New York City.
       </p>
+
     </section>
 
-   <section id="research" aria-labelledby="research-heading">
-  <h2 id="research-heading">Research</h2>
 
-  <p class="research-lead">
-    I care about what it means to mean. Sometimes I think of myself as a chemist,
-    but for language. Just as a chemist wants to know the laws by which molecules come together, and don't, I want to know the laws by which meanings come together, and don't. Consider this sentence:</p>
+    <!-- =========================================================
+         RESEARCH
+    ========================================================== -->
 
-  <p class="research-example">
-    <em>Eno was in Bali in September of 2026.</em>
-  </p>
+    <section id="research" aria-labelledby="research-heading">
 
-  <p>
-    You have almost certainly never encountered that sentence before. Yet you almost certainly
-    understood it immediately. Somehow, your knowledge of the meanings of its
-    parts, together with your knowledge of how those parts are put together,
-    allowed you to arrive at, indeed construct, a meaning for the whole.
-  </p>
+      <h2 id="research-heading">Research</h2>
 
-  <p>
-    But what exactly are the laws governing that process? For not all meanings can be put together. Consider:
-  </p>
+      <p class="research-lead">
+        I care about what it means to mean. Sometimes I think of myself as a
+        chemist, but for language. Just as a chemist wants to know the laws by
+        which molecules come together, and don't, I want to know the laws by
+        which meanings come together, and don't. Consider this sentence:
+      </p>
 
-  <p class="research-example">
-    <em>More people have been to Bali than I have.</em>
-  </p>
+      <p class="research-example">
+        <em>Eno was in Bali in September of 2026.</em>
+      </p>
 
-  <p>
-    Grammatically, this looks fine. But somehow, the meanings of the individual words and phrases fail to come together into a meaningful sentence; they resist being assembled into a coherent
-    whole.
-  </p>
+      <p>
+        You have almost certainly never encountered that sentence before. Yet
+        you almost certainly understood it immediately. Somehow, your knowledge
+        of the meanings of its parts, together with your knowledge of how those
+        parts are put together, allowed you to arrive at, indeed construct, a
+        meaning for the whole.
+      </p>
 
-  <p>
-    My work asks what explains successes and failures of this kind, especially
-    in the case of expressions involving
-    possibility and necessity (like 'must' or 'if', etc.). These expressions allow us to talk
-    beyond the here and now—to describe what might have happened, what must
-    happen, what someone believes, what ought to happen, or what would happen
-    under different circumstances. I try to determine exactly what the meaning of those words contributes to the meaning of complex expressions, like sentences. What laws do they abide by --- just like a chemist might try to determine the laws by which carbon combines (or doesn't) with other atoms and molecules.
-  </p>
+      <p>
+        But what exactly are the laws governing that process? For not all
+        meanings can be put together. Consider:
+      </p>
 
-  <p>
-    For those in the know: my main research is in formal semantics, with
-    connections to syntax and pragmatics. I work especially on intensional
-    expressions—epistemic and deontic modals, propositional attitude reports,
-    grammatical mood, conditionals, and tense—and on their interaction with
-    reference. A central strand of my work concerns binding into intensional
-    contexts. I develop a two-dimensional approach on which natural-language
-    variables can range over two-dimensional individual concepts. I also develop a referential theory of conditionals, treating conditional
-    antecedents as plural Russellian definite descriptions of possible worlds.
-    Among other things, this gives rise to an unusual and, I think, philosophically
-    interesting logic of conditionals.
-  </p>
+      <p class="research-example">
+        <em>More people have been to Bali than I have.</em>
+      </p>
 
-  <p>
-    More broadly, I am interested in the foundations and limits of semantic
-    theory. Recently, for example, I have been thinking about the possibility
-    of <em>semantic akrasia</em>: whether a speaker can judge that an expression
-    means one thing while nevertheless continuing, in some significant sense,
-    to mean something else by it. And of course: the good ol' semantics/pragmatics boundary.
-  </p>
+      <p>
+        Grammatically, this looks fine. But somehow, the meanings of the
+        individual words and phrases fail to come together into a meaningful
+        sentence; they resist being assembled into a coherent whole.
+      </p>
 
-  <p>
-    My work also sometimes veers into neighboring areas of philosophy,
-    especially metaphysics and metaethics. I also have a longstanding interest in
-    non-classical logic, particularly relevance and connexive logics, and in
-    the history of analytic philosophy, especially Frege and the early
-    Wittgenstein (especially his theory of nonsense).
-  </p>
-</section>
-    <!-- <section id="publications">
-      <h2>publications</h2>
+      <p>
+        My work asks what governs successes and failures of this kind,
+        especially with expressions of possibility and necessity—words such as
+        <em>must</em> and <em>if</em>. These expressions let us describe what
+        might or must happen, what someone believes, what ought to happen, and
+        what would happen under different circumstances. I want to know what
+        they contribute to the sentences that contain them, and what principles
+        constrain the ways those meanings combine.
+      </p>
 
-      <h3>published</h3>
+      <p>
+        For those in the know: my main research is in formal semantics, with
+        connections to syntax and pragmatics. I work especially on intensional
+        expressions—epistemic and deontic modals, propositional attitude
+        reports, grammatical mood, conditionals, and tense—and on their
+        interaction with reference. A central strand of my work concerns
+        binding into intensional contexts. I develop a two-dimensional approach
+        on which natural-language variables can range over two-dimensional
+        individual concepts. I also develop a referential theory of
+        conditionals, treating conditional antecedents as plural Russellian
+        definite descriptions of possible worlds. Among other things, this
+        gives rise to an unusual and, I think, philosophically interesting
+        logic of conditionals.
+      </p>
+
+      <p>
+        More broadly, I am interested in the foundations and limits of semantic
+        theory. Recently, for example, I have been thinking about the
+        possibility of <em>semantic akrasia</em>: whether a speaker can judge
+        that an expression means one thing while nevertheless continuing, in
+        some significant sense, to mean something else by it. And of course:
+        the good ol' semantics/pragmatics boundary.
+      </p>
+
+      <p>
+        My work also sometimes veers into neighboring areas of philosophy,
+        especially metaphysics and metaethics. I also have a longstanding
+        interest in non-classical logic, particularly relevance and connexive
+        logics, and in the history of analytic philosophy, especially Frege and
+        the early Wittgenstein (especially his theory of nonsense).
+      </p>
+
+    </section>
+
+
+    <!-- =========================================================
+         PUBLICATIONS / CV
+
+         Kept commented out for now so you can restore these later.
+    ========================================================== -->
+
+    <!--
+    <section id="publications">
+
+      <h2>Publications</h2>
+
+      <h3>Published</h3>
+
       <ul>
         <li>
-          <a href="https://doi.org/10.1007/s10988-023-09389-y">The Complex Lives of Proper Names</a>,
+          <a href="https://doi.org/10.1007/s10988-023-09389-y">
+            The Complex Lives of Proper Names
+          </a>,
           <em>Linguistics and Philosophy</em> (2023).
+
           <div class="note">
-            On the semantics of proper names; argues that names are predicates and, in argument position, the predicative
-            component of covert definite descriptions.
+            On the semantics of proper names; argues that names are predicates
+            and, in argument position, the predicative component of covert
+            definite descriptions.
           </div>
         </li>
       </ul>
 
-      <h3>under review / in progress</h3>
+      <h3>Under review / in progress</h3>
+
       <ul>
-        <li><strong>Paper 1.</strong> On the truth‑value of conditionals with impossible antecedents.</li>
-        <li><strong>Paper 2.</strong> On analyzing modality in natural language as explicit quantification over possible worlds.</li>
-        <li><strong>Paper 3.</strong> In defense of necessitarianism (propositions are necessarily true if true at all).</li>
-        <li><strong>Paper 4.</strong> On a counterpart semantics for de&nbsp;re attitude reports.</li>
+        <li>
+          <strong>Paper 1.</strong>
+          On the truth-value of conditionals with impossible antecedents.
+        </li>
+
+        <li>
+          <strong>Paper 2.</strong>
+          On analyzing modality in natural language as explicit quantification
+          over possible worlds.
+        </li>
+
+        <li>
+          <strong>Paper 3.</strong>
+          In defense of necessitarianism.
+        </li>
+
+        <li>
+          <strong>Paper 4.</strong>
+          On a counterpart semantics for de re attitude reports.
+        </li>
       </ul>
 
       <p class="muted">For drafts, please email.</p>
-    </section> -->
 
-<!-- <section id="cv">
-  <h2>You can learn more about me by reading my:</h2>
-  <p><a href="cv.pdf">CV (PDF)</a></p>
-</section> -->
+    </section>
+    -->
 
+
+    <!-- =========================================================
+         ANALYTIC SALON
+    ========================================================== -->
 
     <section id="salon">
-      <h2>Analytic philosophy salon</h2>
+
+      <h2>Analytic Philosophy Salon</h2>
+
       <p>
-        I’m building a public‑facing discussion series: <a href="https://analytic-salon-nyc.github.io/">The Analytic Salon</a>.
+        I also run
+        <a href="https://analytic-salon-nyc.github.io/">The Analytic Salon</a>,
+        a public-facing discussion series in New York built around a simple
+        idea: analytic philosophy can be rigorous without being cloistered.
+        Each session begins with a problem worth getting stuck on, usually
+        introduced by an invited philosopher, and then opens into structured
+        conversation with the room. We have discussed topics ranging from
+        decision theory to metaphysics, with an emphasis on clarity,
+        disagreement, and the pleasure of thinking together.
       </p>
+
     </section>
 
+
+    <!-- =========================================================
+         MISC
+    ========================================================== -->
+
     <section id="misc">
+
       <h2>Misc.</h2>
+
       <p>
-        I (mostly) exist outside of academia too. I’m an active poet. My first book of poetry, <em>Ποιητικό Αίτιο</em>
-        (Poetic Cause), was published in April 2015 in Greece and received the Varveris Prize (2016). My second book,
-        <em>Παράξενα Φρούτα που Κρέμονται</em> (Strange Fruit Hanging), was published in November 2023. A third book is in the making.
+        I (mostly) exist outside of academia too. I’m an active poet. My first
+        book of poetry, <em>Ποιητικό Αίτιο</em> (Poetic Cause), was published
+        in April 2015 in Greece and received the Varveris Prize (2016). My
+        second book, <em>Παράξενα Φρούτα που Κρέμονται</em> (Strange Fruit
+        Hanging), was published in November 2023. A third book is in the making.
       </p>
+
       <p>
-        I love languages, human and otherwise. I speak Albanian, English, Modern Greek, Portuguese, Spanish, and French
-        at an intermediate level or higher. I can read Ancient Greek, and can understand some very basic Arabic and Norwegian.
-        I’m also learning how to code in Python and CSS/HTML.
+        I love languages, human and otherwise. I speak Albanian, English,
+        Modern Greek, Portuguese, Spanish, and French at an intermediate level
+        or higher. I can read Ancient Greek, and can understand some very basic
+        Arabic and Norwegian. I’m also learning how to code in Python and
+        CSS/HTML.
       </p>
+
       <p>
         I love hiking, good wine, the <em>New Yorker</em>, volleyball, and jazz.
       </p>
+
     </section>
 
-    <section id="for students">
+
+    <!-- =========================================================
+         FOR STUDENTS
+    ========================================================== -->
+
+    <section id="for-students">
+
       <h2>Are you a student?</h2>
+
       <p>
-        I’ve been a philosophy student for most of my life. It was tough much of the time, mainly because I had no guidance
-        and had to figure it out mostly on my own—from whether to study philosophy, to how to do philosophy, to how to craft
-        a successful application for philosophy grad school. I want to give back some of what I learned.
+        I’ve been a philosophy student for most of my life. It was tough much
+        of the time, mainly because I had no guidance and had to figure it out
+        mostly on my own—from whether to study philosophy, to how to do
+        philosophy, to how to craft a successful application for philosophy
+        grad school. I want to give back some of what I learned.
       </p>
+
       <p>
-        If you are a student—in high school, college, or graduate school—feel free to email me. I can offer general advice,
-        read a personal statement, and give feedback on a writing sample. I have transferred across three PhD programs, so I can
-        also help with that.
+        If you are a student—in high school, college, or graduate school—feel
+        free to email me. I can offer general advice, read a personal
+        statement, and give feedback on a writing sample. I have transferred
+        across three PhD programs, so I can also help with that.
       </p>
+
     </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
 
     <footer class="footer">
-      <p class="muted">Last updated: February 2026<span id="updated"></span></p>
+
+      <p class="muted">
+        Last updated: September 2026
+      </p>
+
     </footer>
+
   </main>
 
-<script>
-  // Enable the CSS rules that start hidden
-  document.documentElement.classList.add('js');
 
-  window.addEventListener('load', () => {
-    const sections = Array.from(document.querySelectorAll('main.page section'));
+  <!-- =========================================================
+       SCROLL REVEAL
+  ========================================================== -->
 
-    // 1) Fade in whatever is already in view on load (instead of appearing instantly)
-    const inView = sections.filter(sec => {
-      const r = sec.getBoundingClientRect();
-      return r.top < window.innerHeight * 0.92; // treat “near viewport” as in view
-    });
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
 
-    inView.forEach((sec, i) => {
-      setTimeout(() => sec.classList.add('reveal'), 120 + i * 90); // slight stagger
-    });
+      const sections =
+        document.querySelectorAll('main.page > section');
 
-    // 2) Reveal the rest only when the user scrolls them well into view
-    const observer = new IntersectionObserver((entries, obs) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal');
-          obs.unobserve(entry.target);
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+              entry.target.classList.add('reveal');
+              obs.unobserve(entry.target);
+            }
+
+          });
+
+        },
+        {
+          /*
+            A low threshold is important on mobile:
+            long sections no longer need to fit substantially
+            inside the viewport before appearing.
+          */
+          threshold: 0.08,
+
+          /*
+            Reveal a little before the section reaches
+            the very bottom of the viewport.
+          */
+          rootMargin: "0px 0px -8% 0px"
         }
-      }
-    }, {
-      threshold: 0.35,                // needs more of the section visible
-      rootMargin: "0px 0px -25% 0px"  // triggers later (25% from bottom)
-    });
+      );
 
-    sections.forEach(sec => {
-      if (!sec.classList.contains('reveal')) observer.observe(sec);
+      sections.forEach(section => observer.observe(section));
+
     });
-  });
-</script>
+  </script>
+
 </body>
+
 </html>

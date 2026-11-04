@@ -1,240 +1,178 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Eno Agolli</title>
-
-  <meta
-    name="description"
-    content="Éno Agólli — philosophy, language, logic, and modality"
-  />
-
-  <!--
-    If JavaScript is available, the site becomes interactive.
-    Without JavaScript, all sections remain visible normally.
-  -->
-  <script>
-    document.documentElement.classList.add('js');
-  </script>
-
+  <meta name="description" content="Éno Agólli — philosophy, language, logic, and modality" />
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
-
 <body>
-
   <main class="page">
 
-
-    <!-- =========================================================
-         HEADER
-    ========================================================== -->
-
     <header class="top">
-
       <h1>Eno Agolli</h1>
-
       <p class="lede">
         <span>Assistant Director, Saul Kripke Center</span>
         <span>Postdoctoral Research Associate, CUNY Graduate Center</span>
       </p>
-
       <p class="contact">
-        agollieno
-        <span class="muted">[at]</span>
-        gmail
-        <span class="muted">[dot]</span>
-        com
+        agollieno <span class="muted">[at]</span> gmail <span class="muted">[dot]</span> com
       </p>
-
     </header>
-
-
-    <!-- =========================================================
-         CONTENT
-
-         With JavaScript, sections stay hidden until requested.
-
-         Requested sections are moved to the bottom of this
-         container, so they appear in the order in which the
-         visitor discovers them.
-    ========================================================== -->
 
     <div id="content-stage" class="content-stage">
 
-
-      <!-- =======================================================
-           ABOUT
-      ======================================================== -->
-
-      <section
-        id="about"
-        class="site-section"
-        data-section="about"
-      >
-
+      <section id="about" class="site-section" data-section="about">
         <h2>About</h2>
-
         <p>
-          I have a PhD in Philosophy from Rutgers University. I have done
-          coursework and research in philosophy at UChicago, Cambridge (UK),
-          UConn, and Notre Dame. I am an analytic philosopher, specializing in
-          language and logic but also highly interested in metaphysics,
-          epistemology, and occasionally even beyond.
+          I have a PhD in Philosophy from Rutgers University. I have done coursework and research in philosophy at
+          UChicago, Cambridge (UK), UConn, and Notre Dame. I am an analytic philosopher, specializing in language and
+          logic but also highly interested in metaphysics, epistemology, and occasionally even beyond.
         </p>
-
-        <p>
-          I was born in Albania, raised in Greece, and I now live in New York City.
-        </p>
-
+        <p>I was born in Albania, raised in Greece, and I now live in New York City.</p>
       </section>
 
-
-      <!-- =======================================================
-           PICTURE
-      ======================================================== -->
-
-      <section
-        id="picture"
-        class="site-section picture-section"
-        data-section="picture"
-      >
-
+      <section id="picture" class="site-section picture-section" data-section="picture">
         <h2>Picture of me</h2>
-
-        <!--
-          Keep eno.jpg in the same GitHub folder
-          as index.html and styles.css.
-        -->
-
-        <img
-          class="discovered-portrait"
-          src="eno.jpg"
-          alt="Portrait of Eno Agolli"
-        />
-
+        <img class="discovered-portrait" src="eno.jpg" alt="Portrait of Eno Agolli" />
       </section>
 
+      <section id="research" class="site-section branching-section" data-section="research">
+        <h2>Research</h2>
+        <p class="branch-intro">Choose how far in you want to go.</p>
+        <div class="branch-choices" aria-label="Research choices">
+          <button type="button" data-command="for non-specialists">for non-specialists</button>
+          <span aria-hidden="true">·</span>
+          <button type="button" data-command="for specialists">for specialists</button>
+        </div>
 
-      <!-- =======================================================
-           RESEARCH
-      ======================================================== -->
+        <div id="research-non-specialists" class="nested-reveal" data-nested="research-non-specialists">
+          <p class="nested-command">› for non-specialists</p>
 
-      <section
-        id="research"
-        class="site-section"
-        data-section="research"
-        aria-labelledby="research-heading"
-      >
+          <p class="research-lead">
+            I care about what it means to mean. Sometimes I think of myself as a chemist,
+            but for language. Just as a chemist wants to know the laws by which molecules come together, and don't,
+            I want to know the laws by which meanings come together, and don't. Consider this sentence:
+          </p>
 
-        <h2 id="research-heading">Research</h2>
+          <p class="research-example"><em>Eno was in Bali in September of 2026.</em></p>
 
-        <p class="research-lead">
-          I care about what it means to mean. Sometimes I think of myself as a
-          chemist, but for language. Just as a chemist wants to know the laws by
-          which molecules come together, and don't, I want to know the laws by
-          which meanings come together, and don't. Consider this sentence:
-        </p>
+          <p>
+            You have almost certainly never encountered that sentence before. Yet
+            you almost certainly understood it immediately. Somehow, you're able to take your knowledge
+            of the meanings of its parts, together with your knowledge of how those
+            parts are put together, and arrive at, indeed construct, a
+            meaning for the whole.
+          </p>
 
-        <p class="research-example">
-          <em>Eno was in Bali in September of 2026.</em>
-        </p>
+          <p>But what exactly are the laws governing that process? For not all meanings can be put together. Consider:</p>
 
-        <p>
-          You have almost certainly never encountered that sentence before. Yet
-          you almost certainly understood it immediately. Somehow, you're able to take your knowledge
-          of the meanings of its parts, together with your knowledge of how those
-          parts are put together, and arrive at, indeed construct, a
-          meaning for the whole.
-        </p>
+          <p class="research-example"><em>More people have been to Bali than I have.</em></p>
+          <p class="research-example"><em>Someone has ever been to Bali.</em></p>
 
-        <p>
-          But what exactly are the laws governing that process? For not all
-          meanings can be put together. Consider:
-        </p>
+          <p>
+            Grammatically, these looks fine. But somehow, the meanings of the
+            individual words and phrases fail to stick together into a meaningful
+            sentence; they resist being assembled into a coherent whole.
+          </p>
 
-        <p class="research-example">
-          <em>More people have been to Bali than I have.</em>
-        </p>
+          <p>
+            My work asks what governs successes and failures of this kind,
+            especially when it comes to expressions of possibility and necessity—words such as
+            <em>must</em> and <em>if</em>- and reports of other people's thoughts-like "John believes that ...". I want to know what
+            they contribute to the sentences that contain them, and what principles
+            constrain the ways those meanings combine.
+          </p>
+        </div>
 
-         <p class="research-example">
-          <em>Someone has ever been to Bali.</em>
-        </p>
+        <div id="research-specialists" class="nested-reveal" data-nested="research-specialists">
+          <p class="nested-command">› for specialists</p>
 
-        <p>
-          Grammatically, these looks fine. But somehow, the meanings of the
-          individual words and phrases fail to stick together into a meaningful
-          sentence; they resist being assembled into a coherent whole.
-        </p>
+          <p>
+            For those in the know: my main research is in formal semantics, with
+            forrays into syntax, pragmatics, and logic. I work especially on intensional
+            expressions—epistemic modals, propositional attitude
+            reports, grammatical mood, conditionals, and tense—and on their
+            interaction with reference and quantification. A central strand of my work concerns
+            binding into intensional contexts. I develop a two-dimensional approach
+            on which natural-language variables can range over two-dimensional
+            semantic objects. I extend this to singular terms, tense, and modality.
+          </p>
 
-        <p>
-          My work asks what governs successes and failures of this kind,
-          especially when it comes to expressions of possibility and necessity—words such as
-          <em>must</em> and <em>if</em>- and reports of other people's thoughts-like "John believes that ...". I want to know what
-          they contribute to the sentences that contain them, and what principles
-          constrain the ways those meanings combine.
-        </p>
+          <p>
+            In the course of this main research, I have produced three more offshoot lines:
+            <br><br>
+            (i) Conditionals: I have developed a referential theory of
+            conditionals, treating conditional antecedents as plural Russellian
+            definite descriptions of possible worlds. Among other things, this
+            gives rise to an unusual and, I think, philosophically interesting
+            logic of conditionals.
+            <br><br>
+            (ii) Retraction: Dynamic semantics has a lot to say about epistmeic modals, but surprisingly little about retracting assertions that contain them. I propose a new theory of how dynamic semantics can handle such assertions.
+            <br><br>
+            (iii) Linguistic Akrasia: There has always been talk of the normativity of meaning. So, if meaning is normative, there must be linguistic mistakes. And if there can be linguistic mistakes, then there can be such mistakes committed in the knowledge of the fact that they are mistakes. I wonder if this constitutes a distinct case of semantic or pragmatic akrasia.
+            <br><br>
+            (iv) Akrasia in AI models: relatedly, I wonder if AI agents are genuinely capable of morally and epsitemically akratic behavior. If they are, as they seem to, my work asks how such akratic behavior can be both tamed and leveraged in the service of alignment.
+          </p>
 
-        <p>
-          For those in the know: my main research is in formal semantics, with
-          forrays into syntax, pragmatics, and logic. I work especially on intensional
-          expressions—epistemic modals, propositional attitude
-          reports, grammatical mood, conditionals, and tense—and on their
-          interaction with reference and quantification. A central strand of my work concerns
-          binding into intensional contexts. I develop a two-dimensional approach
-          on which natural-language variables can range over two-dimensional
-          semantic objects. I extend this to singular terms, tense, and modality. 
-        </p>
-
-        <p>
-          In the course of this main research, I have produced three more offshoot lines:
-          
-          (i) Conditionals: I have developed a referential theory of
-          conditionals, treating conditional antecedents as plural Russellian
-          definite descriptions of possible worlds. Among other things, this
-          gives rise to an unusual and, I think, philosophically interesting
-          logic of conditionals. 
-          
-          (ii) Retraction: Dynamic semantics has a lot to say about epistmeic modals, but surprisingly little about retracting assertions that contain them. I propose a new theory of how dynamic semantics can handle such assertions.
-          
-          (iii) Linguistic Akrasia: There has always been talk of the normativity of meaning. So, if meaning is normative, there must be linguistic mistakes. And if there can be linguistic mistakes, then there can be such mistakes committed in the knowledge of the fact that they are mistakes. I wonder if this constitutes a distinct case of semantic or pragmatic akrasia.
-          
-          
-          (iv) Akrasia in AI models: relatedly, I wonder if AI agents are genuinely capable of morally and epsitemically akratic behavior. If they are, as they seem to, my work asks how such akratic behavior can be both tamed and leveraged in the service of alignment.
-          
-       
-        </p>
-
-        <p>
-          My work also sometimes veers into neighboring areas of philosophy,
-          especially metaphysics. I also have a longstanding
-          interest in non-classical logic, particularly relevance and connexive
-          logics. Sometimes, I also dabble in Wittgenstein (especially his theory of nonsense).
-        </p>
-
+          <p>
+            My work also sometimes veers into neighboring areas of philosophy,
+            especially metaphysics. I also have a longstanding
+            interest in non-classical logic, particularly relevance and connexive
+            logics. Sometimes, I also dabble in Wittgenstein (especially his theory of nonsense).
+          </p>
+        </div>
       </section>
 
+      <section id="poetry" class="site-section branching-section" data-section="poetry">
+        <h2>Poetry</h2>
+        <p>
+          I have another life in language. My first book of poetry, <em>Ποιητικό Αίτιο</em>
+          (Poetic Cause), was published in 2015 and received the Varveris Prize in 2016.
+          My second, <em>Παράξενα Φρούτα που Κρέμονται</em> (Strange Fruit Hanging), appeared in 2023.
+          A third book is in the making.
+        </p>
 
-      <!-- =======================================================
-           ANALYTIC SALON
-      ======================================================== -->
+        <div class="branch-choices" aria-label="Poetry choices">
+          <button type="button" data-command="read a poem">read a poem</button>
+          <span aria-hidden="true">·</span>
+          <button type="button" data-command="my books">my books</button>
+          <span aria-hidden="true">·</span>
+          <button type="button" data-command="poet profile">poet profile</button>
+        </div>
 
-      <section
-        id="salon"
-        class="site-section"
-        data-section="salon"
-      >
+        <div id="poem-reader" class="nested-reveal" data-nested="poem-reader">
+          <p class="nested-command">› read a poem</p>
+          <div id="poem-slot" class="reading-card"></div>
+          <button type="button" class="inline-command" data-command="another poem">another poem</button>
+        </div>
 
+        <div id="poetry-books" class="nested-reveal" data-nested="poetry-books">
+          <p class="nested-command">› my books</p>
+          <p>
+            <em>Ποιητικό Αίτιο</em> (Poetic Cause), 2015 — winner of the 2016 Varveris Prize.
+          </p>
+          <p>
+            <a href="https://www.enipnio.gr/products/%CE%AD%CE%BD%CE%BF-%CE%B1%CE%B3%CE%BA%CF%8C%CE%BB%CE%BB%CE%B9-%CF%80%CE%B1%CF%81%CE%AC%CE%BE%CE%B5%CE%BD%CE%B1-%CF%86%CF%81%CE%BF%CF%8D%CF%84%CE%B1-%CF%80%CE%BF%CF%85-%CE%BA%CF%81%CE%AD%CE%BC%CE%BF%CE%BD%CF%84%CE%B1%CE%B9" target="_blank" rel="noopener noreferrer">
+              <em>Παράξενα Φρούτα που Κρέμονται</em> (Strange Fruit Hanging), 2023 ↗
+            </a>
+          </p>
+        </div>
+
+        <div id="poet-profile" class="nested-reveal" data-nested="poet-profile">
+          <p class="nested-command">› poet profile</p>
+          <p>
+            <a href="https://poets.gr/el/poihtes/agkolli-eno" target="_blank" rel="noopener noreferrer">Poets.gr profile and poems ↗</a>
+          </p>
+        </div>
+      </section>
+
+      <section id="salon" class="site-section" data-section="salon">
         <h2>Analytic Philosophy Salon</h2>
-
         <p>
-          I also run
-          <a href="https://analytic-salon-nyc.github.io/">
-            The Analytic Salon
-          </a>,
+          I also run <a href="https://analytic-salon-nyc.github.io/" target="_blank" rel="noopener noreferrer">The Analytic Salon</a>,
           a public-facing discussion series in New York built around a simple
           idea: analytic philosophy can be rigorous without being cloistered.
           Each session begins with a problem worth getting stuck on, usually
@@ -243,120 +181,60 @@
           decision theory to metaphysics, with an emphasis on clarity,
           disagreement, and the pleasure of thinking together.
         </p>
-
       </section>
 
-
-      <!-- =======================================================
-           MISC.
-      ======================================================== -->
-
-      <section
-        id="misc"
-        class="site-section"
-        data-section="misc"
-      >
-
+      <section id="misc" class="site-section" data-section="misc">
         <h2>Misc.</h2>
-
-        <p>
-          I (mostly) exist outside of academia too. I’m an active poet. My first
-          book of poetry, <em>Ποιητικό Αίτιο</em> (Poetic Cause), was published
-          in April 2015 in Greece and received the Varveris Prize (2016). My
-          second book, <em>Παράξενα Φρούτα που Κρέμονται</em> (Strange Fruit
-          Hanging), was published in November 2023. A third book is in the making.
-        </p>
 
         <p>
           I love languages, human and otherwise. I speak Albanian, English,
           Modern Greek, Portuguese, Spanish, and French at an intermediate level
           or higher. I can read Ancient Greek, and can understand some very basic
-          Arabic and Norwegian. I’m also learning how to code in Python and
-          CSS/HTML.
+          Arabic and Norwegian. I’m also learning how to code in Python and CSS/HTML.
         </p>
 
-        <p>
-          I love hiking, good wine, the <em>New Yorker</em>, volleyball, and jazz.
-        </p>
+        <p>I love hiking, good wine, the <em>New Yorker</em>, volleyball, and jazz.</p>
 
+        <h3>Elsewhere</h3>
+        <ul class="elsewhere-links">
+          <li>
+            <a href="https://www.kathimerini.gr/culture/books/561285967/500-lexeis-me-ton-eno-agkolli/" target="_blank" rel="noopener noreferrer">
+              500 λέξεις με τον Ένο Αγκόλλι — <em>Η Καθημερινή</em> ↗
+            </a>
+          </li>
+          <li>
+            <a href="https://www.kathimerini.gr/society/562900555/arthro-toy-eno-agkolli-stin-k-ethnikos-eaytos-i-ethnikoi-eaytoi/" target="_blank" rel="noopener noreferrer">
+              Εθνικός εαυτός ή εθνικοί εαυτοί; — <em>Η Καθημερινή</em> ↗
+            </a>
+          </li>
+        </ul>
       </section>
 
-
-      <!-- =======================================================
-           FOR STUDENTS
-      ======================================================== -->
-
-      <section
-        id="for-students"
-        class="site-section"
-        data-section="students"
-      >
-
+      <section id="for-students" class="site-section" data-section="students">
         <h2>Are you a student?</h2>
-
         <p>
-          I’ve been a philosophy student for most of my life. It was tough much
-          of the time, mainly because I had no guidance and had to figure it out
-          mostly on my own—from whether to study philosophy, to how to do
-          philosophy, to how to craft a successful application for philosophy
-          grad school. I want to give back some of what I learned.
+          I’ve been a philosophy student for most of my life. It was tough much of the time, mainly because I had no guidance
+          and had to figure it out mostly on my own—from whether to study philosophy, to how to do philosophy, to how to craft
+          a successful application for philosophy grad school. I want to give back some of what I learned.
         </p>
-
         <p>
-          If you are a student—in high school, college, or graduate school—feel
-          free to email me. I can offer general advice, read a personal
-          statement, and give feedback on a writing sample. I have transferred
-          across three PhD programs, so I can also help with that.
+          If you are a student—in high school, college, or graduate school—feel free to email me. I can offer general advice,
+          read a personal statement, and give feedback on a writing sample. I have transferred across three PhD programs, so I can
+          also help with that.
         </p>
-
       </section>
 
     </div>
 
-
-    <!-- =========================================================
-         INTERACTIVE PROMPT
-    ========================================================== -->
-
     <div class="discovery" id="discovery">
+      <div id="command-response" class="command-response" aria-live="polite" aria-atomic="true"></div>
 
-      <div
-        id="command-response"
-        class="command-response"
-        aria-live="polite"
-        aria-atomic="true"
-      ></div>
+      <p class="discovery-question">Type below what you'd like to know.</p>
 
-
-      <p class="discovery-question">
-        Type below what you'd like to know.
-      </p>
-
-
-      <form
-        id="command-form"
-        class="command-form"
-        autocomplete="off"
-      >
-
-        <label
-          class="visually-hidden"
-          for="command-input"
-        >
-          Enter a command
-        </label>
-
-
+      <form id="command-form" class="command-form" autocomplete="off">
+        <label class="visually-hidden" for="command-input">Enter a command</label>
         <div class="command-line">
-
-          <span
-            class="prompt-mark"
-            aria-hidden="true"
-          >
-            ›
-          </span>
-
-
+          <span class="prompt-mark" aria-hidden="true">›</span>
           <input
             id="command-input"
             class="command-input"
@@ -367,995 +245,573 @@
             autocapitalize="none"
             spellcheck="false"
           />
-
         </div>
-
       </form>
 
-
-      <button
-        type="button"
-        class="show-all-button"
-        data-command="all"
-      >
+      <button type="button" class="show-all-button" data-command="all">
         Can’t type — just show me everything
       </button>
-
     </div>
 
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
     <footer class="footer">
-
-      <p class="muted">
-        Last updated: September 2026
-      </p>
-
+      <p class="muted">Last updated: November 2026</p>
     </footer>
-
   </main>
 
-
-  <!-- =========================================================
-       INTERACTION
-  ========================================================== -->
-
   <script>
-
     window.addEventListener('DOMContentLoaded', () => {
-
-
-      /* ---------------------------------------------------------
-         ELEMENTS
-      --------------------------------------------------------- */
-
-      const stage =
-        document.getElementById('content-stage');
-
-      const sections =
-        Array.from(document.querySelectorAll('.site-section'));
-
-      const commandForm =
-        document.getElementById('command-form');
-
-      const commandInput =
-        document.getElementById('command-input');
-
-      const response =
-        document.getElementById('command-response');
-
-      const commandButtons =
-        document.querySelectorAll('[data-command]');
-
-
-      /*
-        The normal order used by "show everything"
-        and by "clear".
-      */
+      const stage = document.getElementById('content-stage');
+      const sections = Array.from(document.querySelectorAll('.site-section'));
+      const commandForm = document.getElementById('command-form');
+      const commandInput = document.getElementById('command-input');
+      const response = document.getElementById('command-response');
 
       const canonicalOrder = [
         'about',
         'picture',
         'research',
+        'poetry',
         'salon',
         'misc',
         'students'
       ];
 
-
-
-      /* ---------------------------------------------------------
-         COMMAND ALIASES
-      --------------------------------------------------------- */
-
       const aliases = {
-
         about: [
-          'about',
-          'about me',
-          'me',
-          'bio',
-          'biography',
-          'background',
-          'who',
-          'who are you',
-          'who is eno',
-          'eno'
+          'about', 'about me', 'me', 'bio', 'biography', 'background',
+          'who', 'who are you', 'who is eno', 'eno'
         ],
 
         picture: [
-          'picture',
-          'picture of me',
-          'photo',
-          'photo of me',
-          'photograph',
-          'photograph of me',
-          'portrait',
-          'portrait of me',
-          'what do you look like',
-          'what does eno look like',
-          'show me your picture',
-          'show me a picture',
+          'picture', 'picture of me', 'photo', 'photo of me', 'photograph',
+          'photograph of me', 'portrait', 'portrait of me', 'what do you look like',
+          'what does eno look like', 'show me your picture', 'show me a picture',
           'show me your photo'
         ],
 
         research: [
-          'research',
-          'work',
-          'academic work',
-          'papers',
-          'paper',
-          'philosophy',
-          'semantics',
-          'projects',
-          'scholarship',
-          'what do you work on',
-          'what are you working on',
-          'your research'
+          'research', 'work', 'academic work', 'philosophy', 'semantics',
+          'projects', 'scholarship', 'what do you work on',
+          'what are you working on', 'your research'
+        ],
+
+        nonSpecialists: [
+          'for non-specialists', 'for nonspecialists', 'non-specialists',
+          'nonspecialists', 'non specialist', 'non specialists', 'simple research',
+          'research for non-specialists', 'research for nonspecialists',
+          'explain your research', 'explain your research simply'
+        ],
+
+        specialists: [
+          'for specialists', 'specialists', 'specialist', 'technical research',
+          'research for specialists', 'technical version', 'go deeper',
+          'deeper', 'details'
+        ],
+
+        poetry: [
+          'poetry', 'poet', 'poems', 'poem', 'your poetry', 'your poems'
+        ],
+
+        readPoem: [
+          'read a poem', 'show me a poem', 'give me a poem',
+          'i want to read a poem', 'poem please'
+        ],
+
+        anotherPoem: [
+          'another poem', 'next poem', 'one more poem', 'more poetry'
+        ],
+
+        books: [
+          'my books', 'books', 'poetry books', 'your books', 'collections',
+          'poetry collections'
+        ],
+
+        poetProfile: [
+          'poet profile', 'poetry profile', 'profile as a poet', 'poet bio'
         ],
 
         salon: [
-          'salon',
-          'analytic salon',
-          'the analytic salon',
-          'events',
-          'event',
-          'discussion',
-          'discussion series',
-          'philosophy salon'
+          'salon', 'analytic salon', 'the analytic salon', 'events', 'event',
+          'discussion', 'discussion series', 'philosophy salon'
         ],
 
         misc: [
-          'misc',
-          'miscellaneous',
-          'personal',
-          'outside academia',
-          'poetry',
-          'poet',
-          'books',
-          'languages',
-          'hobbies',
-          'interests'
+          'misc', 'miscellaneous', 'personal', 'outside academia', 'languages',
+          'hobbies', 'interests', 'elsewhere', 'who are you really'
         ],
 
         students: [
-          'for students',
-          'students',
-          'student',
-          'advice',
-          'mentoring',
-          'mentor',
-          'mentorship',
-          'graduate school',
-          'grad school',
-          'student advice'
+          'for students', 'students', 'student', 'advice', 'mentoring', 'mentor',
+          'mentorship', 'graduate school', 'grad school', 'student advice'
+        ],
+
+        surprise: [
+          'surprise me', 'surprise', 'random', 'something else', 'another thing'
+        ],
+
+        readSomething: [
+          'read me something', 'something to read', 'give me something to read',
+          'what should i read', 'recommend something'
         ],
 
         help: [
-          'help',
-          'commands',
-          'command',
-          'menu',
-          '?',
-          'what can i type',
-          'what can i ask',
-          'options'
+          'help', 'commands', 'command', 'menu', '?', 'what can i type',
+          'what can i ask', 'options'
         ],
 
         all: [
-          'all',
-          'show all',
-          'show everything',
-          'everything',
-          'full site',
-          'whole site',
-          'reveal all'
+          'all', 'show all', 'show everything', 'everything', 'full site',
+          'whole site', 'reveal all'
         ],
 
         clear: [
-          'clear',
-          'reset',
-          'start over',
-          'hide all',
-          'close all'
+          'clear', 'reset', 'start over', 'hide all', 'close all'
         ],
 
-        cv: [
-          'cv',
-          'curriculum vitae',
-          'resume',
-          'résumé'
-        ],
+        cv: ['cv', 'curriculum vitae', 'resume', 'résumé'],
 
         contact: [
-          'contact',
-          'email',
-          'email me',
-          'contact me',
-          'how can i contact you'
-        ]
+          'contact', 'email', 'email me', 'contact me', 'how can i contact you'
+        ],
 
+        nothing: ['nothing', 'never mind', 'nevermind']
       };
-
-
-
-      /* ---------------------------------------------------------
-         RESPONSES
-      --------------------------------------------------------- */
 
       const summonResponses = {
-
-        about:
-          'A little context.',
-
-        picture:
-          'Since you asked.',
-
-        research:
-          'Research, then.',
-
-        salon:
-          'The Analytic Salon:',
-
-        misc:
-          'Outside academia:',
-
-        students:
-          'For students:'
-
+        about: 'A little context.',
+        picture: 'Since you asked.',
+        research: 'Research, then.',
+        poetry: 'Another life in language.',
+        salon: 'The Analytic Salon:',
+        misc: 'Outside academia:',
+        students: 'For students:'
       };
 
+      const poemLinks = [
+        {
+          label: 'Two poems at Diastixo',
+          detail: 'Two poems, published by Diastixo.',
+          url: 'https://diastixo.gr/logotexnikakeimena/poihsh/9279-duo-poihmata-agolli'
+        },
+        {
+          label: 'Poems at Poets.gr',
+          detail: 'A small selection of poems at Poets.gr.',
+          url: 'https://poets.gr/el/poihtes/agkolli-eno'
+        },
+        {
+          label: 'Poem of the Week at Kathimerini',
+          detail: 'A poem featured by Kathimerini.',
+          url: 'https://www.kathimerini.gr/culture/books/1091251/to-poiima-tis-evdomadas-11/'
+        }
+      ];
 
+      const readingSuggestions = [
+        {
+          label: 'Two poems at Diastixo',
+          url: 'https://diastixo.gr/logotexnikakeimena/poihsh/9279-duo-poihmata-agolli'
+        },
+        {
+          label: 'Poems at Poets.gr',
+          url: 'https://poets.gr/el/poihtes/agkolli-eno'
+        },
+        {
+          label: '500 λέξεις με τον Ένο Αγκόλλι — Kathimerini',
+          url: 'https://www.kathimerini.gr/culture/books/561285967/500-lexeis-me-ton-eno-agkolli/'
+        },
+        {
+          label: 'Εθνικός εαυτός ή εθνικοί εαυτοί; — Kathimerini',
+          url: 'https://www.kathimerini.gr/society/562900555/arthro-toy-eno-agkolli-stin-k-ethnikos-eaytos-i-ethnikoi-eaytoi/'
+        }
+      ];
 
-      /* ---------------------------------------------------------
-         HELPERS
-      --------------------------------------------------------- */
+      let poemIndex = -1;
+      let readingIndex = -1;
+      let lastCommand = '';
+      const commandHistory = [];
+      let historyIndex = 0;
 
       function normalizeCommand(value) {
-
         return value
           .toLowerCase()
           .trim()
           .replace(/[.!,:;]+$/g, '')
           .replace(/\s+/g, ' ');
-
       }
-
 
       function getSection(name) {
-
-        return document.querySelector(
-          `.site-section[data-section="${name}"]`
-        );
-
+        return document.querySelector(`.site-section[data-section="${name}"]`);
       }
 
-
-      function isVisible(section) {
-
-        return section.classList.contains('is-visible');
-
+      function getNested(name) {
+        return document.querySelector(`[data-nested="${name}"]`);
       }
 
+      function isVisible(element) {
+        return element && element.classList.contains('is-visible');
+      }
 
       function escapeHTML(text) {
-
-        const div =
-          document.createElement('div');
-
+        const div = document.createElement('div');
         div.textContent = text;
-
         return div.innerHTML;
-
       }
-
-
-
-      /* ---------------------------------------------------------
-         DETERMINE WHAT THE VISITOR MEANT
-      --------------------------------------------------------- */
 
       function resolveCommand(value) {
-
-        const normalized =
-          normalizeCommand(value);
-
+        const normalized = normalizeCommand(value);
 
         for (const [command, variants] of Object.entries(aliases)) {
-
-          if (variants.includes(normalized)) {
-            return command;
-          }
-
+          if (variants.includes(normalized)) return command;
         }
 
-
-        /*
-          Additional forgiveness for natural phrases.
-        */
-
-        if (
-          normalized.includes('picture') ||
-          normalized.includes('photo') ||
-          normalized.includes('portrait') ||
-          normalized.includes('look like')
-        ) {
-          return 'picture';
-        }
-
-
-        if (
-          normalized.includes('research') ||
-          normalized.includes('paper') ||
-          normalized.includes('semantics')
-        ) {
-          return 'research';
-        }
-
-
-        if (normalized.includes('salon')) {
-          return 'salon';
-        }
-
-
-        if (
-          normalized.includes('student') ||
-          normalized.includes('mentor')
-        ) {
-          return 'students';
-        }
-
-
-        if (
-          normalized.includes('poetry') ||
-          normalized.includes('poet') ||
-          normalized.includes('hobbies')
-        ) {
-          return 'misc';
-        }
-
-
-        if (
-          normalized.includes('about you') ||
-          normalized.includes('background')
-        ) {
-          return 'about';
-        }
-
+        if (normalized === 'bali' || normalized.includes('bali')) return 'nonSpecialists';
+        if (normalized.includes('picture') || normalized.includes('photo') || normalized.includes('portrait') || normalized.includes('look like')) return 'picture';
+        if (normalized.includes('non-specialist') || normalized.includes('nonspecialist')) return 'nonSpecialists';
+        if (normalized.includes('specialist') || normalized.includes('technical')) return 'specialists';
+        if (normalized.includes('read') && normalized.includes('poem')) return 'readPoem';
+        if (normalized.includes('another') && normalized.includes('poem')) return 'anotherPoem';
+        if (normalized.includes('poetry') || normalized.includes('poem')) return 'poetry';
+        if (normalized.includes('research') || normalized.includes('semantics')) return 'research';
+        if (normalized.includes('salon')) return 'salon';
+        if (normalized.includes('student') || normalized.includes('mentor')) return 'students';
+        if (normalized.includes('about you') || normalized.includes('background')) return 'about';
+        if (normalized.includes('language') || normalized.includes('hobbies')) return 'misc';
 
         return null;
-
       }
-
-
-
-      /* ---------------------------------------------------------
-         RESPONSE TEXT
-      --------------------------------------------------------- */
 
       function setResponse(text, html = false) {
-
         response.classList.remove('response-visible');
-
-
-        if (html) {
-          response.innerHTML = text;
-        } else {
-          response.textContent = text;
-        }
-
-
-        /*
-          Restart the entrance animation.
-        */
-
+        if (html) response.innerHTML = text;
+        else response.textContent = text;
         void response.offsetWidth;
-
         response.classList.add('response-visible');
-
       }
 
-
-
-      /* ---------------------------------------------------------
-         REVEAL ONE SECTION
-      --------------------------------------------------------- */
+      function stampSection(section, label) {
+        let stamp = section.querySelector(':scope > .section-command');
+        if (!stamp) {
+          stamp = document.createElement('p');
+          stamp.className = 'section-command';
+          section.prepend(stamp);
+        }
+        stamp.textContent = `› ${label}`;
+      }
 
       function revealSection(name, options = {}) {
-
         const {
           scroll = true,
           changeHash = true,
-          conversational = true
+          conversational = true,
+          label = name
         } = options;
 
-
-        const section =
-          getSection(name);
-
-
+        const section = getSection(name);
         if (!section) return;
 
-
-        /*
-          If already visible, return to it.
-        */
-
         if (isVisible(section)) {
-
-          if (name === 'picture') {
-
-            setResponse(
-              'You’ve already found me.'
-            );
-
-          } else {
-
-            setResponse(
-              `You've already opened ${section.querySelector('h2').textContent.toLowerCase()}.`
-            );
-
-          }
-
-
-          section.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-
+          if (name === 'picture') setResponse('You’ve already found me.');
+          else setResponse(`You've already opened ${section.querySelector('h2').textContent.toLowerCase()}.`);
+          if (scroll) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
           return;
         }
 
-
-        /*
-          A brief reply before the section appears.
-        */
-
-        if (conversational) {
-
-          setResponse(
-            summonResponses[name]
-          );
-
-        }
-
-
-        /*
-          Move the section to the end of the content stage.
-          This means sections appear in the order requested.
-        */
-
+        if (conversational) setResponse(summonResponses[name] || 'Here you go.');
+        stampSection(section, label);
         stage.appendChild(section);
 
-
         setTimeout(() => {
-
           section.classList.add('is-visible');
+          document.body.classList.add('has-discovered');
 
-
-          if (changeHash) {
-
-            history.replaceState(
-              null,
-              '',
-              '#' + section.id
-            );
-
-          }
-
-
-          /*
-            Particularly useful on phones:
-            dismiss the keyboard after submission.
-          */
-
+          if (changeHash) history.replaceState(null, '', '#' + section.id);
           commandInput.blur();
 
-
           if (scroll) {
-
-            setTimeout(() => {
-
-              section.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-              });
-
-            }, 80);
-
+            setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 70);
           }
-
-        }, conversational ? 280 : 0);
-
+        }, conversational ? 230 : 0);
       }
 
+      function revealNested(sectionName, nestedName, label) {
+        const section = getSection(sectionName);
+        const nested = getNested(nestedName);
+        if (!section || !nested) return;
 
+        const reveal = () => {
+          if (isVisible(nested)) {
+            setResponse(`You've already opened ${label}.`);
+            nested.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+          }
 
-      /* ---------------------------------------------------------
-         SHOW EVERYTHING
-      --------------------------------------------------------- */
+          nested.classList.add('is-visible');
+          setTimeout(() => nested.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 60);
+        };
+
+        if (!isVisible(section)) {
+          revealSection(sectionName, { scroll: false, label: sectionName });
+          setTimeout(reveal, 280);
+        } else {
+          reveal();
+        }
+      }
+
+      function showResearchNonSpecialists() {
+        setResponse('Start here.');
+        revealNested('research', 'research-non-specialists', 'for non-specialists');
+      }
+
+      function showResearchSpecialists() {
+        setResponse('The technical version.');
+        revealNested('research', 'research-specialists', 'for specialists');
+      }
+
+      function renderPoem() {
+        poemIndex = (poemIndex + 1) % poemLinks.length;
+        const item = poemLinks[poemIndex];
+        const slot = document.getElementById('poem-slot');
+        slot.innerHTML = `
+          <p>${escapeHTML(item.detail)}</p>
+          <p><a href="${item.url}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.label)} ↗</a></p>
+        `;
+      }
+
+      function showPoem(advance = true) {
+        setResponse(advance ? 'One, then.' : 'Poetry:');
+        revealNested('poetry', 'poem-reader', 'read a poem');
+        if (advance) renderPoem();
+      }
+
+      function showBooks() {
+        setResponse('The books.');
+        revealNested('poetry', 'poetry-books', 'my books');
+      }
+
+      function showPoetProfile() {
+        setResponse('As a poet:');
+        revealNested('poetry', 'poet-profile', 'poet profile');
+      }
 
       function showAll() {
-
-        setResponse(
-          'Fair enough. Everything at once.'
-        );
-
-
-        /*
-          Restore the normal editorial order first.
-        */
+        setResponse('Fair enough. Everything at once.');
 
         canonicalOrder.forEach(name => {
-
-          const section =
-            getSection(name);
-
+          const section = getSection(name);
           if (section) {
+            stampSection(section, name === 'students' ? 'for students' : name);
             stage.appendChild(section);
           }
-
         });
 
-
         setTimeout(() => {
-
           canonicalOrder.forEach((name, index) => {
-
-            const section =
-              getSection(name);
-
+            const section = getSection(name);
             if (!section) return;
-
-
-            setTimeout(() => {
-
-              section.classList.add('is-visible');
-
-            }, index * 80);
-
+            setTimeout(() => section.classList.add('is-visible'), index * 60);
           });
 
+          ['research-non-specialists', 'research-specialists', 'poem-reader', 'poetry-books', 'poet-profile'].forEach(name => {
+            const nested = getNested(name);
+            if (nested) nested.classList.add('is-visible');
+          });
 
-          history.replaceState(
-            null,
-            '',
-            window.location.pathname + window.location.search
-          );
-
-
-        }, 220);
-
+          if (poemIndex < 0) renderPoem();
+          document.body.classList.add('has-discovered');
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        }, 160);
       }
-
-
-
-      /* ---------------------------------------------------------
-         CLEAR
-      --------------------------------------------------------- */
 
       function clearAll() {
-
-        setResponse(
-          'Cleared. What next?'
-        );
-
+        setResponse('Cleared. What next?');
 
         sections.forEach(section => {
-
           section.classList.remove('is-visible');
-
+          const stamp = section.querySelector(':scope > .section-command');
+          if (stamp) stamp.remove();
         });
 
+        document.querySelectorAll('.nested-reveal').forEach(nested => nested.classList.remove('is-visible'));
 
         canonicalOrder.forEach(name => {
-
-          const section =
-            getSection(name);
-
-          if (section) {
-            stage.appendChild(section);
-          }
-
+          const section = getSection(name);
+          if (section) stage.appendChild(section);
         });
 
-
-        history.replaceState(
-          null,
-          '',
-          window.location.pathname + window.location.search
-        );
-
-
-        setTimeout(() => {
-
-          commandInput.focus();
-
-        }, 100);
-
+        document.body.classList.remove('has-discovered');
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+        setTimeout(() => commandInput.focus(), 80);
       }
-
-
-
-      /* ---------------------------------------------------------
-         HELP
-      --------------------------------------------------------- */
 
       function showHelp() {
-
-        setResponse(
-          `
-          <span class="help-intro">
-            You can ask for:
-          </span>
-
-          <span class="help-commands">
-            about · research · salon · misc · for students · picture of me
-          </span>
-
-          <span class="help-extra">
-            You can also try
-            <strong>all</strong>,
-            <strong>clear</strong>,
-            <strong>cv</strong>,
-            or <strong>contact</strong>.
-          </span>
-          `,
-          true
-        );
-
+        setResponse(`
+          <span class="help-intro">You can ask for:</span>
+          <span class="help-commands">about · research · poetry · salon · misc · for students · picture of me</span>
+          <span class="help-extra">And try <strong>surprise me</strong>, <strong>read me something</strong>, <strong>all</strong>, <strong>clear</strong>, <strong>cv</strong>, or <strong>contact</strong>.</span>
+        `, true);
       }
-
-
-
-      /* ---------------------------------------------------------
-         CV
-      --------------------------------------------------------- */
 
       function showCVMessage() {
-
-        setResponse(
-          `No CV here yet. Try <strong>research</strong> instead.`,
-          true
-        );
-
+        setResponse(`No CV here yet. Try <strong>research</strong> instead.`, true);
       }
-
-
-
-      /* ---------------------------------------------------------
-         CONTACT
-      --------------------------------------------------------- */
 
       function showContact() {
-
-        setResponse(
-          `
-          Email me at
-          <span class="email-response">
-            agollieno [at] gmail [dot] com
-          </span>.
-          `,
-          true
-        );
-
+        setResponse(`Email me at <span class="email-response">agollieno [at] gmail [dot] com</span>.`, true);
       }
-
-
-
-      /* ---------------------------------------------------------
-         UNKNOWN COMMAND
-      --------------------------------------------------------- */
 
       function showUnknown(value) {
-
-        const cleaned =
-          value.trim();
-
-
-        setResponse(
-          `
-          I don't quite know what to do with
-          <span class="unknown-command">
-            “${escapeHTML(cleaned)}”
-          </span>.
-          Try <strong>help</strong>.
-          `,
-          true
-        );
-
+        setResponse(`I don't quite know what to do with <span class="unknown-command">“${escapeHTML(value.trim())}”</span>. Try <strong>help</strong>.`, true);
       }
 
-
-
-      /* ---------------------------------------------------------
-         RUN COMMAND
-      --------------------------------------------------------- */
-
-      function runCommand(rawCommand) {
-
-        if (!rawCommand.trim()) return;
-
-
-        const command =
-          resolveCommand(rawCommand);
-
-
-        commandInput.value = '';
-
-
-        switch (command) {
-
-          case 'about':
-          case 'picture':
-          case 'research':
-          case 'salon':
-          case 'misc':
-          case 'students':
-
-            revealSection(command);
-            break;
-
-
-          case 'help':
-
-            showHelp();
-            break;
-
-
-          case 'all':
-
-            showAll();
-            break;
-
-
-          case 'clear':
-
-            clearAll();
-            break;
-
-
-          case 'cv':
-
-            showCVMessage();
-            break;
-
-
-          case 'contact':
-
-            showContact();
-            break;
-
-
-          default:
-
-            showUnknown(rawCommand);
-
-        }
-
-      }
-
-
-
-      /* ---------------------------------------------------------
-         FORM SUBMISSION
-      --------------------------------------------------------- */
-
-      commandForm.addEventListener('submit', event => {
-
-        event.preventDefault();
-
-        runCommand(commandInput.value);
-
-      });
-
-
-
-      /* ---------------------------------------------------------
-         CLICKABLE "SHOW EVERYTHING"
-      --------------------------------------------------------- */
-
-      commandButtons.forEach(button => {
-
-        button.addEventListener('click', () => {
-
-          runCommand(button.dataset.command);
-
+      function surpriseMe() {
+        const candidates = canonicalOrder.filter(name => {
+          const section = getSection(name);
+          return section && !isVisible(section);
         });
 
+        if (!candidates.length) {
+          setResponse('You’ve found everything. Try clear if you want to begin again.');
+          return;
+        }
+
+        const name = candidates[Math.floor(Math.random() * candidates.length)];
+        setResponse('All right.');
+        revealSection(name, {
+          conversational: false,
+          label: name === 'students' ? 'for students' : name
+        });
+      }
+
+      function readMeSomething() {
+        readingIndex = (readingIndex + 1) % readingSuggestions.length;
+        const item = readingSuggestions[readingIndex];
+        setResponse(`
+          <span class="help-intro">Try this:</span>
+          <span class="help-commands"><a href="${item.url}" target="_blank" rel="noopener noreferrer">${escapeHTML(item.label)} ↗</a></span>
+        `, true);
+      }
+
+      function runCommand(rawCommand) {
+        if (!rawCommand.trim()) return;
+
+        const normalized = normalizeCommand(rawCommand);
+        const command = resolveCommand(rawCommand);
+
+        lastCommand = rawCommand.trim();
+        commandHistory.push(lastCommand);
+        historyIndex = commandHistory.length;
+        commandInput.value = '';
+
+        switch (command) {
+          case 'about': revealSection('about', { label: 'about' }); break;
+          case 'picture': revealSection('picture', { label: 'picture of me' }); break;
+          case 'research': revealSection('research', { label: 'research' }); break;
+          case 'nonSpecialists': showResearchNonSpecialists(); break;
+          case 'specialists': showResearchSpecialists(); break;
+          case 'poetry': revealSection('poetry', { label: 'poetry' }); break;
+          case 'readPoem': showPoem(true); break;
+          case 'anotherPoem': showPoem(true); break;
+          case 'books': showBooks(); break;
+          case 'poetProfile': showPoetProfile(); break;
+          case 'salon': revealSection('salon', { label: 'salon' }); break;
+          case 'misc': revealSection('misc', { label: 'misc' }); break;
+          case 'students': revealSection('students', { label: 'for students' }); break;
+          case 'surprise': surpriseMe(); break;
+          case 'readSomething': readMeSomething(); break;
+          case 'help': showHelp(); break;
+          case 'all': showAll(); break;
+          case 'clear': clearAll(); break;
+          case 'cv': showCVMessage(); break;
+          case 'contact': showContact(); break;
+          case 'nothing': setResponse('An excellent choice.'); break;
+          default: showUnknown(rawCommand);
+        }
+      }
+
+      commandForm.addEventListener('submit', event => {
+        event.preventDefault();
+        runCommand(commandInput.value);
       });
 
+      document.addEventListener('click', event => {
+        const button = event.target.closest('[data-command]');
+        if (!button) return;
+        runCommand(button.dataset.command);
+      });
 
+      commandInput.addEventListener('keydown', event => {
+        if (event.key === 'ArrowUp' && commandHistory.length) {
+          event.preventDefault();
+          historyIndex = Math.max(0, historyIndex - 1);
+          commandInput.value = commandHistory[historyIndex] || '';
+        }
 
-      /* ---------------------------------------------------------
-         ROTATING GHOST SUGGESTIONS
-      --------------------------------------------------------- */
+        if (event.key === 'ArrowDown' && commandHistory.length) {
+          event.preventDefault();
+          historyIndex = Math.min(commandHistory.length, historyIndex + 1);
+          commandInput.value = commandHistory[historyIndex] || '';
+        }
+
+        if (event.key === 'Tab' && !event.shiftKey) {
+          const typed = normalizeCommand(commandInput.value);
+          const completions = [
+            'about', 'research', 'for non-specialists', 'for specialists', 'poetry',
+            'read a poem', 'my books', 'poet profile', 'analytic salon', 'misc',
+            'for students', 'picture of me', 'surprise me', 'read me something', 'help'
+          ];
+          const match = completions.find(item => item.startsWith(typed) && item !== typed);
+          if (typed && match) {
+            event.preventDefault();
+            commandInput.value = match;
+          }
+        }
+      });
 
       const placeholderIdeas = [
         'about',
         'research',
+        'poetry',
         'analytic salon',
         'picture of me',
-        'poetry',
         'for students',
+        'surprise me',
+        'read me something',
         'help'
       ];
 
-
       let placeholderIndex = 0;
-
-
       setInterval(() => {
-
-        /*
-          Don't change the ghost text while someone
-          is actively typing.
-        */
-
-        if (
-          document.activeElement === commandInput ||
-          commandInput.value !== ''
-        ) {
-          return;
-        }
-
-
-        placeholderIndex =
-          (placeholderIndex + 1) % placeholderIdeas.length;
-
-
-        commandInput.placeholder =
-          placeholderIdeas[placeholderIndex];
-
+        if (document.activeElement === commandInput || commandInput.value !== '') return;
+        placeholderIndex = (placeholderIndex + 1) % placeholderIdeas.length;
+        commandInput.placeholder = placeholderIdeas[placeholderIndex];
       }, 2400);
 
+      const hashMap = {
+        about: 'about',
+        picture: 'picture',
+        research: 'research',
+        poetry: 'poetry',
+        salon: 'salon',
+        misc: 'misc',
+        'for-students': 'students',
+        students: 'students'
+      };
 
-
-      /* ---------------------------------------------------------
-         DIRECT URLS
-
-         Examples:
-
-         /#research
-         /#picture
-         /#salon
-         /#for-students
-      --------------------------------------------------------- */
-
-      function openFromHash() {
-
-        const hash =
-          window.location.hash.replace('#', '');
-
-
-        if (!hash) return;
-
-
-        const hashMap = {
-
-          'about':
-            'about',
-
-          'picture':
-            'picture',
-
-          'research':
-            'research',
-
-          'salon':
-            'salon',
-
-          'misc':
-            'misc',
-
-          'for-students':
-            'students',
-
-          'students':
-            'students'
-
-        };
-
-
-        const command =
-          hashMap[hash];
-
-
+      function openFromHash(scroll = false) {
+        const hash = window.location.hash.replace('#', '');
+        const command = hashMap[hash];
         if (!command) return;
 
-
-        revealSection(
-          command,
-          {
-            scroll: false,
-            changeHash: false,
-            conversational: false
-          }
-        );
-
-
-        setTimeout(() => {
-
-          const section =
-            getSection(command);
-
-
-          if (section) {
-
-            section.scrollIntoView({
-              behavior: 'auto',
-              block: 'start'
-            });
-
-          }
-
-        }, 80);
-
+        revealSection(command, {
+          scroll,
+          changeHash: false,
+          conversational: false,
+          label: command === 'students' ? 'for students' : command
+        });
       }
 
-
-      openFromHash();
-
-
-
-      /* ---------------------------------------------------------
-         HASH CHANGES
-      --------------------------------------------------------- */
-
-      window.addEventListener('hashchange', () => {
-
-        const hash =
-          window.location.hash.replace('#', '');
-
-
-        const hashMap = {
-
-          'about':
-            'about',
-
-          'picture':
-            'picture',
-
-          'research':
-            'research',
-
-          'salon':
-            'salon',
-
-          'misc':
-            'misc',
-
-          'for-students':
-            'students',
-
-          'students':
-            'students'
-
-        };
-
-
-        if (hashMap[hash]) {
-
-          revealSection(
-            hashMap[hash],
-            {
-              scroll: true,
-              changeHash: false,
-              conversational: false
-            }
-          );
-
-        }
-
-      });
-
+      openFromHash(false);
+      window.addEventListener('hashchange', () => openFromHash(true));
     });
-
   </script>
-
 </body>
-
 </html>

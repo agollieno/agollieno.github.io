@@ -2,845 +2,479 @@
    VARIABLES
 ========================================================= */
 
+
 :root{
-
   --fg: #111111;
-
   --muted: #686868;
-
   --soft-muted: #969696;
-
   --link: #0b57d0;
-
   --bg: #f6f6f6;
-
   --rule: #d5d5d5;
-
   --soft-rule: #e6e6e6;
-
   --max: 740px;
-
 }
-
-
-/* =========================================================
-   PAGE
-========================================================= */
 
 html{
-
   background: var(--bg);
-
   scroll-behavior: smooth;
-
 }
-
 
 body{
-
   margin: 0;
-
   background: var(--bg);
-
   color: var(--fg);
-
-  font-family:
-    "Iowan Old Style",
-    "Palatino Linotype",
-    "Book Antiqua",
-    Palatino,
-    Georgia,
-    serif;
-
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   font-size: 15px;
-
   line-height: 1.68;
-
   -webkit-font-smoothing: antialiased;
-
   text-rendering: optimizeLegibility;
-
 }
-
 
 .page{
-
   max-width: var(--max);
-
   margin: 0 auto;
-
-  padding:
-    58px
-    22px
-    84px;
-
+  padding: 58px 22px 84px;
 }
-
-
-/* =========================================================
-   HEADER
-========================================================= */
 
 .top{
-
   margin-bottom: 66px;
-
 }
-
 
 h1{
-
-  margin:
-    0
-    0
-    10px
-    0;
-
+  margin: 0 0 10px 0;
   font-size: 29px;
-
   line-height: 1.15;
-
   font-weight: 600;
-
   letter-spacing: -0.012em;
-
 }
-
 
 .lede{
-
-  margin:
-    0
-    0
-    11px
-    0;
-
+  margin: 0 0 11px 0;
   line-height: 1.55;
-
 }
-
 
 .lede span{
-
   display: block;
-
 }
-
 
 .contact{
-
   margin: 0;
-
 }
-
-
-/* =========================================================
-   TYPOGRAPHY
-========================================================= */
 
 p{
-
-  margin:
-    0
-    0
-    15px
-    0;
-
+  margin: 0 0 15px 0;
 }
-
 
 h2{
-
-  margin:
-    0
-    0
-    13px
-    0;
-
+  margin: 0 0 13px 0;
   font-size: 15px;
-
   line-height: 1.4;
-
   font-weight: 700;
-
 }
-
 
 h3{
-
-  margin:
-    20px
-    0
-    8px
-    0;
-
+  margin: 22px 0 8px 0;
   font-size: 14px;
-
   line-height: 1.4;
-
   font-weight: 700;
-
 }
-
-
-/* =========================================================
-   LINKS
-========================================================= */
 
 a{
-
   color: var(--link);
-
 }
-
 
 a:visited{
-
   color: var(--link);
-
 }
-
 
 a:hover{
-
   text-decoration-thickness: 1px;
-
   text-underline-offset: 2px;
-
 }
-
-
-/* =========================================================
-   CONTENT
-========================================================= */
 
 .content-stage{
-
   width: 100%;
-
 }
-
-
-/*
-  With JavaScript enabled, sections begin hidden.
-*/
 
 .js .site-section{
-
   display: none;
-
 }
-
-
-/*
-  Requested sections appear.
-*/
 
 .js .site-section.is-visible{
-
   display: block;
-
-  animation:
-    sectionReveal
-    620ms
-    cubic-bezier(0.22, 1, 0.36, 1)
-    both;
-
+  animation: sectionReveal 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-
 
 .site-section{
-
-  margin:
-    0
-    0
-    78px
-    0;
-
+  margin: 0 0 78px 0;
   scroll-margin-top: 36px;
-
 }
-
 
 .site-section p,
 .site-section li{
-
   text-align: justify;
-
   text-justify: inter-word;
-
   hyphens: auto;
-
 }
-
 
 @keyframes sectionReveal{
-
   from{
-
     opacity: 0;
-
     transform: translateY(9px);
-
   }
-
   to{
-
     opacity: 1;
-
     transform: translateY(0);
-
   }
-
 }
 
+.section-command,
+.nested-command{
+  margin: 0 0 8px 0 !important;
+  color: var(--soft-muted);
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  text-align: left !important;
+}
 
-/* =========================================================
-   RESEARCH EXAMPLES
-========================================================= */
+.section-command{
+  margin-bottom: 10px !important;
+}
+
+.branch-intro{
+  margin-bottom: 8px;
+  color: var(--muted);
+  text-align: left !important;
+}
+
+.branch-choices{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 3px 9px;
+  margin: 0 0 24px 0;
+  color: var(--soft-muted);
+}
+
+.branch-choices button,
+.inline-command{
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--link);
+  font: inherit;
+  cursor: pointer;
+}
+
+.branch-choices button:hover,
+.branch-choices button:focus-visible,
+.inline-command:hover,
+.inline-command:focus-visible{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.nested-reveal{
+  display: none;
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid var(--soft-rule);
+}
+
+.nested-reveal.is-visible{
+  display: block;
+  animation: nestedReveal 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes nestedReveal{
+  from{
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 .research-lead{
-
   margin-bottom: 17px;
-
 }
-
 
 .research-example{
-
-  margin:
-    23px
-    0;
-
+  margin: 23px 0;
   padding-left: 18px;
-
-  border-left:
-    2px
-    solid
-    var(--rule);
-
+  border-left: 2px solid var(--rule);
   font-size: 1.03em;
-
   text-align: left !important;
-
 }
-
-
-/* =========================================================
-   DISCOVERED PORTRAIT
-========================================================= */
 
 .picture-section{
-
   max-width: 420px;
-
 }
-
 
 .discovered-portrait{
-
   display: block;
-
   width: 100%;
-
   max-width: 340px;
-
   height: auto;
-
   margin-top: 19px;
-
   border-radius: 3px;
-
   filter: saturate(0.94);
-
-  box-shadow:
-    0 1px 3px
-    rgba(0, 0, 0, 0.06);
-
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
+.reading-card{
+  margin: 3px 0 10px 0;
+}
 
-/* =========================================================
-   DISCOVERY / COMMAND AREA
-========================================================= */
+.reading-card p{
+  text-align: left !important;
+}
+
+.inline-command{
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--soft-muted);
+}
+
+.elsewhere-links{
+  margin: 0 0 15px 20px;
+  padding: 0;
+}
+
+.elsewhere-links li{
+  margin-bottom: 8px;
+}
 
 .discovery{
-
   max-width: 610px;
-
   margin-top: 3px;
-
   padding-top: 2px;
-
 }
-
-
-/*
-  Short conversational reply:
-  "Research, then."
-  "Since you asked."
-  etc.
-*/
 
 .command-response{
-
   min-height: 0;
-
   margin: 0;
-
   color: var(--muted);
-
   opacity: 0;
-
   transform: translateY(3px);
-
-  transition:
-    opacity 250ms ease,
-    transform 250ms ease;
-
+  transition: opacity 250ms ease, transform 250ms ease;
 }
-
 
 .command-response:not(:empty){
-
   margin-bottom: 19px;
-
 }
-
 
 .command-response.response-visible{
-
   opacity: 1;
-
   transform: translateY(0);
-
 }
-
 
 .discovery-question{
-
-  margin:
-    0
-    0
-    10px
-    0;
-
+  margin: 0 0 10px 0;
   font-size: 15px;
-
 }
-
-
-/* =========================================================
-   INPUT
-========================================================= */
 
 .command-form{
-
   margin: 0;
-
 }
-
 
 .command-line{
-
   display: flex;
-
   align-items: baseline;
-
   width: 100%;
-
-  border-bottom:
-    1px
-    solid
-    #bcbcbc;
-
-  transition:
-    border-color 180ms ease;
-
+  border-bottom: 1px solid #bcbcbc;
+  transition: border-color 180ms ease;
 }
-
 
 .command-line:focus-within{
-
   border-color: var(--link);
-
 }
-
 
 .prompt-mark{
-
   flex: 0 0 auto;
-
   margin-right: 10px;
-
   color: var(--link);
-
   font-size: 19px;
-
   line-height: 1;
-
   transform: translateY(1px);
-
 }
-
 
 .command-input{
-
   flex: 1;
-
   width: 100%;
-
   min-width: 0;
-
-  padding:
-    5px
-    0
-    8px
-    0;
-
+  padding: 5px 0 8px 0;
   border: 0;
-
   outline: 0;
-
   background: transparent;
-
   color: var(--fg);
-
   font-family: inherit;
-
   font-size: 16px;
-
   line-height: 1.4;
-
   caret-color: var(--link);
-
 }
-
 
 .command-input::placeholder{
-
   color: #a2a2a2;
-
   opacity: 1;
-
 }
-
-
-/* =========================================================
-   SHOW-EVERYTHING ESCAPE HATCH
-========================================================= */
 
 .show-all-button{
-
   appearance: none;
-
   display: inline-block;
-
-  margin:
-    18px
-    0
-    0
-    0;
-
+  margin: 18px 0 0 0;
   padding: 0;
-
   border: 0;
-
   background: none;
-
   color: var(--soft-muted);
-
   font-family: inherit;
-
   font-size: 12px;
-
   line-height: 1.5;
-
   cursor: pointer;
-
   text-decoration: none;
-
-  transition:
-    color 150ms ease;
-
+  transition: color 150ms ease;
 }
-
 
 .show-all-button:hover,
 .show-all-button:focus-visible{
-
   color: var(--link);
-
   text-decoration: underline;
-
   text-underline-offset: 3px;
-
 }
-
-
-/* =========================================================
-   RESPONSES / HELP
-========================================================= */
 
 .help-intro{
-
   display: block;
-
   margin-bottom: 3px;
-
 }
-
 
 .help-commands{
-
   display: block;
-
   color: var(--fg);
-
 }
-
 
 .help-extra{
-
   display: block;
-
   margin-top: 4px;
-
 }
 
-
-.email-response{
-
-  color: var(--fg);
-
-}
-
-
+.email-response,
 .unknown-command{
-
   color: var(--fg);
-
 }
-
-
-/* =========================================================
-   SECONDARY TEXT
-========================================================= */
 
 .muted{
-
   color: var(--muted);
-
 }
-
 
 .note{
-
   margin-top: 4px;
-
   color: var(--muted);
-
 }
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
 
 .footer{
-
   margin-top: 76px;
-
   padding-top: 17px;
-
-  border-top:
-    1px
-    solid
-    var(--soft-rule);
-
+  border-top: 1px solid var(--soft-rule);
   font-size: 0.89em;
-
 }
-
 
 .footer p{
-
   margin: 0;
-
 }
-
-
-/* =========================================================
-   ACCESSIBILITY
-========================================================= */
 
 .visually-hidden{
-
   position: absolute !important;
-
   width: 1px !important;
-
   height: 1px !important;
-
   padding: 0 !important;
-
   margin: -1px !important;
-
   overflow: hidden !important;
-
   clip: rect(0, 0, 0, 0) !important;
-
   white-space: nowrap !important;
-
   border: 0 !important;
-
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
 @media (max-width: 600px){
-
-
   .page{
-
-    padding:
-      38px
-      20px
-      60px;
-
+    padding: 38px 20px 60px;
   }
-
 
   h1{
-
     font-size: 27px;
-
   }
-
 
   .top{
-
     margin-bottom: 54px;
-
   }
-
-
-  /*
-    Justification creates excessive gaps on narrow screens.
-  */
 
   .site-section p,
   .site-section li{
-
     text-align: left;
-
     hyphens: none;
-
   }
-
 
   .site-section{
-
     margin-bottom: 62px;
-
   }
-
 
   .research-example{
-
-    margin:
-      20px
-      0;
-
+    margin: 20px 0;
     padding-left: 15px;
-
   }
-
 
   .picture-section{
-
     max-width: none;
-
   }
-
 
   .discovered-portrait{
-
     max-width: 290px;
-
   }
-
 
   .discovery{
-
     max-width: none;
-
   }
-
-
-  /*
-    16px prevents iPhones from zooming into the field.
-  */
 
   .command-input{
-
     font-size: 16px;
-
   }
-
 
   .show-all-button{
-
     margin-top: 17px;
-
-    padding:
-      3px
-      0;
-
+    padding: 3px 0;
     font-size: 12px;
-
   }
 
+  .branch-choices{
+    gap: 5px 8px;
+  }
+
+  .nested-reveal{
+    margin-top: 25px;
+    padding-top: 16px;
+  }
 
   .footer{
-
     margin-top: 58px;
-
   }
-
 }
 
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
 @media (prefers-reduced-motion: reduce){
-
-
   html{
-
     scroll-behavior: auto;
-
   }
 
-
-  .js .site-section.is-visible{
-
+  .js .site-section.is-visible,
+  .nested-reveal.is-visible{
     animation: none;
-
   }
-
 
   .command-response,
   .command-line,
   .show-all-button{
-
     transition: none;
-
   }
-
 }
+
